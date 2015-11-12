@@ -22,7 +22,6 @@ Distributed under the Boost Software License, Version 1.0.
 #include <boost/hana/detail/nested_by.hpp> // required by fwd decl
 #include <boost/hana/length.hpp>
 #include <boost/hana/less.hpp>
-#include <boost/hana/value.hpp>
 
 #include <cstddef>
 #include <utility>
@@ -104,10 +103,10 @@ BOOST_HANA_NAMESPACE_BEGIN
 
             using SortedIndices = detail::sorted_indices<
                 sizeof...(n),
-                hana::value<decltype(
+                decltype(
                     pred(hana::at_c<prods.first[nn]>(static_cast<Xs&&>(xs)),
                          hana::at_c<prods.second[nn]>(static_cast<Xs&&>(xs)))
-                )>()...
+                )::value...
             >;
 
             return hana::make<S>(
