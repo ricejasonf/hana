@@ -168,6 +168,10 @@ matrix:
     - env: UNIT_TESTS=true COMPILER=clang++-3.7 BOOST_VERSION=trunk
       addons: *clang37
 
+    # Boost 1.60 beta 1
+    - env: UNIT_TESTS=true COMPILER=clang++-3.7 BOOST_VERSION=1.60.0
+      addons: *clang37
+
     # Xcode 7.2 beta 1
     - os: osx
       env: UNIT_TESTS=true COMPILER=clang++ BOOST_VERSION=1.59.0
@@ -176,6 +180,7 @@ matrix:
 
   allow_failures:
     - env: UNIT_TESTS=true COMPILER=clang++-3.7 BOOST_VERSION=trunk
+    - env: UNIT_TESTS=true COMPILER=clang++-3.7 BOOST_VERSION=1.60.0
     - env: UNIT_TESTS=true COMPILER=clang++-3.8 BOOST_VERSION=1.59.0
     - osx_image: xcode7.2b1
 
@@ -197,6 +202,7 @@ install:
   - if [[ "${BOOST_VERSION}" == "1.57.0" ]]; then BOOST_URL="http://sourceforge.net/projects/boost/files/boost/1.57.0/boost_1_57_0.tar.gz"; fi
   - if [[ "${BOOST_VERSION}" == "1.58.0" ]]; then BOOST_URL="http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz"; fi
   - if [[ "${BOOST_VERSION}" == "1.59.0" ]]; then BOOST_URL="http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz"; fi
+  - if [[ "${BOOST_VERSION}" == "1.60.0" ]]; then BOOST_URL="http://sourceforge.net/projects/boost/files/boost/1.60.0.beta.1/boost_1_60_0_b1.tar.gz"; fi
   - if [[ "${BOOST_URL}" != "" ]]; then mkdir boost && travis_retry wget --quiet -O - ${BOOST_URL} | tar --strip-components=1 -xz -C boost; fi
 
   - |
