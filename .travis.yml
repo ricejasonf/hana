@@ -7,6 +7,11 @@ compiler: clang
 os: linux
 sudo: false
 
+
+# Use ccache to cache compilation results. This provides an enormous speedup.
+cache: ccache
+
+
 # Do not build branches of the form "pr/*". By prefixing pull requests coming
 # from branches inside the repository with pr/, this avoids building both the
 # branch push _and_ the pull request.
@@ -291,7 +296,11 @@ before_script:
   # Go back to the root of the project and setup the build directory
   ############################################################################
   - cd ${TRAVIS_BUILD_DIR}
-  - (mkdir build && cd build && cmake .. -DCMAKE_CXX_COMPILER=${COMPILER} -DBOOST_HANA_ENABLE_WERROR=ON ${CMAKE_OPTIONS})
+  # We don't use direct mode, because we want a file to be recompiled when its
+  # dependencies change (e.g. Boost headers 1.58 vs 1.59).
+  - export CCACHE_DIRECT=false
+  - export CXX="ccache ${COMPILER}"
+  - (mkdir build && cd build && cmake .. -DBOOST_HANA_ENABLE_WERROR=ON ${CMAKE_OPTIONS})
 
 
 script:
