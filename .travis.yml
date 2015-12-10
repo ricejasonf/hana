@@ -9,7 +9,9 @@ sudo: false
 
 
 # Use ccache to cache compilation results. This provides an enormous speedup.
-cache: ccache
+cache:
+  directories:
+    - ${HOME}/.ccache
 
 
 # Do not build branches of the form "pr/*". By prefixing pull requests coming
