@@ -389,6 +389,10 @@ script:
     fi
 
 
+after_script:
+  - ccache --show-stats
+
+
 notifications:
   webhooks:
     urls: https://webhooks.gitter.im/e/ce1e3a2036d94b4a644f
