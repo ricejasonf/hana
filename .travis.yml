@@ -287,6 +287,11 @@ install:
   - rvm use 2.1 --install --binary --fuzzy
   - gem install ruby-progressbar tilt
 
+  ############################################################################
+  # Install ccache (only needed on OS X, because already installed on Linux)
+  ############################################################################
+  - if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then brew install ccache; fi
+
 
 before_script:
   ############################################################################
