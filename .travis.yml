@@ -307,7 +307,7 @@ before_script:
   - cd ${TRAVIS_BUILD_DIR}
   # We don't use direct mode, because we want a file to be recompiled when its
   # dependencies change (e.g. Boost headers 1.58 vs 1.59).
-  - export CCACHE_DIRECT=false
+  # - export CCACHE_DIRECT=false
   - export CXX="ccache ${COMPILER}"
   - (mkdir build && cd build && cmake .. -DBOOST_HANA_ENABLE_WERROR=ON ${CMAKE_OPTIONS})
 
