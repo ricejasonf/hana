@@ -291,6 +291,8 @@ install:
   # Install ccache (only needed on OS X, because already installed on Linux)
   ############################################################################
   - if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then brew install ccache; fi
+  - ccache --version
+  - ccache --max-size=5G
 
 
 before_script:
