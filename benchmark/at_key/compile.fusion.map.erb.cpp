@@ -13,14 +13,13 @@ namespace fusion = boost::fusion;
 template <int>
 struct x { };
 
-struct undefined {};
+struct undefined { };
 
 int main() {
     constexpr auto map = fusion::make_map<
         <%= (0...input_size).map { |n| "x<#{n}>" }.join(', ') %>
     >(
-        <%= (0...input_size).map { |n| "undefined{}" }
-          .join(', ') %>
+        <%= (0...input_size).map { |n| "undefined{}" }.join(', ') %>
     );
     constexpr auto result = fusion::at_key<x<<%= input_size-1 %>>>(map);
     (void)result;
