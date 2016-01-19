@@ -6,6 +6,9 @@
   "title": {
     "text": "Compile-time behavior of at_key (look-up)"
   },
+  "xAxis": {
+    "title": { "text": "Number of elements looked up" }
+  },
   "series": [
     {
       "name": "hana::tuple",

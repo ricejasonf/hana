@@ -46,6 +46,8 @@ int main() {
             "my_pair<hana::type<x<#{n}>>, undefined>{}"
         }.join(', ') %>
     );
-    constexpr auto result = hana::at_key(map, hana::type_c<x<<%= input_size-1 %>>>);
-    (void)result;
+
+    <% (0...input_size).each do |n| %>
+    hana::at_key(map, hana::type_c<x<<%= n %>>>);
+    <% end %>
 }

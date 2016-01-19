@@ -19,6 +19,8 @@ int main() {
     constexpr auto tuple = hana::make_tuple(
         <%= (0...200).map { |n| "hana::type_c<x<#{n}>>" }.join(', ') %>
     );
-    constexpr auto result = hana::at_key(tuple, hana::type_c<x<<%= input_size-1 %>>>);
-    (void)result;
+
+    <% (0...input_size).each do |n| %>
+    hana::at_key(tuple, hana::type_c<x<<%= n %>>>);
+    <% end %>
 }

@@ -19,6 +19,8 @@ int main() {
     constexpr auto set = hana::make_set(
         <%= (0...200).map { |n| "hana::type_c<x<#{n}>>" }.join(', ') %>
     );
-    constexpr auto result = hana::at_key(set, hana::type_c<x<<%= input_size-1 %>>>);
-    (void)result;
+
+    <% (0...input_size).each do |n| %>
+    hana::at_key(set, hana::type_c<x<<%= n %>>>);
+    <% end %>
 }
