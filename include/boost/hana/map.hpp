@@ -190,7 +190,7 @@ BOOST_HANA_NAMESPACE_BEGIN
                       Pair&& pair, hana::false_)
         {
             return hana::make_map(
-                detail::bucket_get(m, decltype(hana::hash(hana::first(std::declval<Pairs>()))){})...,
+                detail::bucket_at_key(m, hana::first(pair))...,
                 static_cast<Pair&&>(pair)
             );
         }
@@ -201,7 +201,7 @@ BOOST_HANA_NAMESPACE_BEGIN
                       Pair&& pair, hana::false_)
         {
             return hana::make_map(
-                detail::bucket_get(m, decltype(hana::hash(hana::first(std::declval<Pairs>()))){})...,
+                detail::bucket_at_key(m, hana::first(pair))...,
                 static_cast<Pair&&>(pair)
             );
         }
@@ -232,7 +232,7 @@ BOOST_HANA_NAMESPACE_BEGIN
             Map const& old;
             template<typename ...Key>
             constexpr auto operator()(Key&& ...key) {
-                return hana::make_map(detail::bucket_get(old, hana::hash(static_cast<Key&&>(key)))...);
+                return hana::make_map(detail::bucket_at_key(old, static_cast<Key&&>(key))...);
             }
         };
 
@@ -283,8 +283,8 @@ BOOST_HANA_NAMESPACE_BEGIN
             template<typename Key>
             constexpr auto operator()(Key&& key) {
                 return hana::just(
-                    hana::second( 
-                        detail::bucket_get(m, hana::hash(static_cast<Key&&>(key)))
+                    hana::second(
+                        detail::bucket_at_key(m, static_cast<Key&&>(key))
                     )
                 );
             }
@@ -329,7 +329,7 @@ BOOST_HANA_NAMESPACE_BEGIN
         template <typename Map, typename Key>
         static constexpr decltype(auto) apply(Map&& m, Key&& key) {
             return hana::second(
-                detail::bucket_get(static_cast<Map&&>(m), hana::hash(static_cast<Key&&>(key)))
+                detail::bucket_at_key(static_cast<Map&&>(m), static_cast<Key&&>(key))
             );
         }
     };
