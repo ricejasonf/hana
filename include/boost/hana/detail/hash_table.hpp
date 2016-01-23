@@ -14,6 +14,7 @@ Distributed under the Boost Software License, Version 1.0.
 #include <boost/hana/detail/index_if.hpp>
 #include <boost/hana/hash.hpp>
 
+#include <type_traits>
 #include <utility>
 
 
@@ -24,7 +25,7 @@ BOOST_HANA_NAMESPACE_BEGIN namespace detail {
         List list;
     };
 
-    // bucket_get
+    // bucket_at_key
     template <typename TypeHash, typename List>
     static constexpr detail::bucket<TypeHash, List>&& 
     bucket_get_helper(detail::bucket<TypeHash, List>&& b) {
@@ -90,12 +91,26 @@ BOOST_HANA_NAMESPACE_BEGIN namespace detail {
     struct bucket_insert_helper<true> {
         template <typename Xs, typename X>
         constexpr auto apply(Xs&& xs, X const&) {
+        #if 0
+            static_assert(hana::decltype_(xs) == hana::type<void>,
+                "Associative container may not contain duplicate keys.")
+        #endif
             return static_cast<Xs&&>(xs);
         }
     };
 
-    template <typename HashTable, typename X, typename TypeHash>
-    constexpr auto bucket_insert(HashTable const& h, X&& x, TypeHash const&) {
+    template<typename GetKey, typename Bucket, typename X>
+    constexpr auto bucket_insert(Bucket const& b, X const&) {
+        //the hash doesn't match
+        return static_cast<Bucket&&>(b);
+    }
+
+    template <typename GetKey, typename TypeHash, typename List, typename X,
+        typename = std::enable_if_t<std::is_same<
+            TypeHash, 
+            decltype(hana::hash(std::declval<GetKey>(x)));
+        >::value>>
+    constexpr auto bucket_insert(bucket<TypeHash, List> const& b, X&& x) {
         auto const& xs = bucket_get_helper<TypeHash>(h).list;
         using Xs = decltype(xs);
         using Key = decltype(hana::first(x));
@@ -104,21 +119,25 @@ BOOST_HANA_NAMESPACE_BEGIN namespace detail {
         return detail::bucket<TypeHash, decltype(new_list)>{std::move(new_list)};
     }
 
+    //make_bucket
+    template <typename GetKey, typename TypeHash, typename ...E>
+    constexpr auto make_bucket(E&& ...e) {
+
     //hash table FIXME
-    template <typename GetKey, typename ...E>
-    struct hash_table
-        : detail::bucket<E, decltype(hana::hash(std::declval<GetKey>()(std::declval<E>())))>...
-    {
-        template <typename ...Xn>
-        explicit constexpr auto hash_table(Xn&& ...xn)
-            : detail::bucket<E,
-                decltype(hana::hash(std::declval<GetKey>()(std::declval<E>())))>{static_cast<Xn&&>(xn)}...
-        { }
-    };
+    template <typename ...Bucket>
+    struct hash_table;
 
     template <typename GetKey, typename ...E>
     constexpr auto make_hash_table(E&& ...e) {
-
+        () {
+            constexpr auto hsl = hana::make_tuple(decltype(hana::hash(std::declval<GetKey>(e))){}...);
+            constexpr auto hs = make_unique(hsl);
+            hana::on(hana::make_tuple,
+            hana::fold_left(hash_table<>, 
+            using HashTable = decltype(
+                bucket_insert(h, std::declval<GetKey>()(e))...)
+            ); 
+        }
     };
 
 } BOOST_HANA_NAMESPACE_END
