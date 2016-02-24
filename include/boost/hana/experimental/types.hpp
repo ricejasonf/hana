@@ -19,6 +19,7 @@ Distributed under the Boost Software License, Version 1.0.
 #include <boost/hana/fwd/core/tag_of.hpp>
 #include <boost/hana/fwd/equal.hpp>
 #include <boost/hana/fwd/is_empty.hpp>
+#include <boost/hana/fwd/core/make.hpp>
 #include <boost/hana/fwd/transform.hpp>
 #include <boost/hana/fwd/unpack.hpp>
 #include <boost/hana/type.hpp>
@@ -46,12 +47,26 @@ BOOST_HANA_NAMESPACE_BEGIN
         //////////////////////////////////////////////////////////////////////
 
         template <typename ...T>
-        struct types { };
+        struct types {
+            using type = types;
+        };
+
+        constexpr auto make_types = make<experimental::types_tag>;
     } // end namespace experimental
 
     template <typename ...T>
     struct tag_of<experimental::types<T...>> {
         using type = experimental::types_tag;
+    };
+
+    template <>
+    struct make_impl<experimental::types_tag> {
+        template <typename ...T>
+        static constexpr auto apply(T const&...) 
+            -> const experimental::types<typename T::type...>
+        {
+            return {};
+        }
     };
 
     // Foldable
@@ -69,6 +84,14 @@ BOOST_HANA_NAMESPACE_BEGIN
         >::type>
         static constexpr hana::type<typename F::template apply<T...>::type>
         apply(hana::experimental::types<T...> const&, F const&) { return {}; }
+    };
+
+    template <>
+    struct length_impl<hana::experimental::types_tag> {
+        template <typename ...T>
+        static constexpr auto apply(experimental::types_tag<T...>)
+            -> hana::size_t<sizeof...(T)>
+        { return {}; }
     };
 
     // Functor
@@ -173,6 +196,38 @@ BOOST_HANA_NAMESPACE_BEGIN
         static constexpr hana::false_ apply(Ts const&, Us const&)
         { return {}; }
     };
+
+    // Sequence
+
+    template <>
+    struct Sequence<experimental::types_tag> {
+        static constexpr bool value = true;
+    };
+
+    template <>
+    struct append_impl<experimental::types_tag> {
+        template <typename ...T, typename U>
+        static constexpr auto apply(experimental::types<T...> const&, U const&)
+            -> experimental::types<T..., U>
+        { return {}; }
+    };
+
+    template <>
+    struct concat_impl<experimental::types_tag> {
+        template <typename ...T, typename ...U>
+        static constexpr auto apply(experimental::types<T...> const&, experimental::types<U...> const&)
+            -> experimental::types<T..., U...>
+        { return {}; }
+    };
+
+    template <>
+    struct prepend_impl<experimental::types_tag> {
+        template <typename ...T, typename U>
+        static constexpr auto apply(experimental::types<T...> const&, U const&)
+            -> experimental::types<U, T...>
+        { return {}; }
+    };
+
 BOOST_HANA_NAMESPACE_END
 
 #endif // !BOOST_HANA_EXPERIMENTAL_TYPES_HPP
