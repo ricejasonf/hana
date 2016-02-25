@@ -13,21 +13,27 @@ Distributed under the Boost Software License, Version 1.0.
 #include <boost/hana/bool.hpp>
 #include <boost/hana/concept/metafunction.hpp>
 #include <boost/hana/config.hpp>
+#include <boost/hana/fwd/ap.hpp>
 #include <boost/hana/fwd/append.hpp>
 #include <boost/hana/detail/any_of.hpp>
 #include <boost/hana/detail/unpack_flatten.hpp>
 #include <boost/hana/fwd/at.hpp>
+#include <boost/hana/fwd/chain.hpp>
 #include <boost/hana/fwd/concat.hpp>
 #include <boost/hana/fwd/contains.hpp>
+#include <boost/hana/fwd/core/is_a.hpp>
+#include <boost/hana/fwd/core/make.hpp>
 #include <boost/hana/fwd/core/tag_of.hpp>
 #include <boost/hana/fwd/core/to.hpp>
 #include <boost/hana/fwd/equal.hpp>
 #include <boost/hana/fwd/flatten.hpp>
 #include <boost/hana/fwd/is_empty.hpp>
-#include <boost/hana/fwd/core/make.hpp>
+#include <boost/hana/fwd/lift.hpp>
 #include <boost/hana/fwd/prepend.hpp>
 #include <boost/hana/fwd/transform.hpp>
+#include <boost/hana/fwd/tuple.hpp>
 #include <boost/hana/fwd/unpack.hpp>
+#include <boost/hana/functional/on.hpp>
 #include <boost/hana/type.hpp>
 
 #include <cstddef>
@@ -256,9 +262,28 @@ BOOST_HANA_NAMESPACE_BEGIN
         }
     }
 
+    // Applicative
+
+    template <>
+    struct ap_impl<hana::experimental::types_tag> {
+        template <typename F, typename X>
+        static constexpr decltype(auto) apply(F&& f, X&& x) {
+            return hana::chain(
+                static_cast<F&&>(f),
+                hana::partial(hana::transform, static_cast<X&&>(x))
+            );
+        }
+    };
+
+    template <>
+    struct lift_impl<hana::experimental::types_tag> {
+        template <typename X>
+        static constexpr decltype(auto) apply(X&& x)
+        { return hana::experimental::make_types(static_cast<X&&>(x)); }
+    };
+
     // Monad
 
-#if 0
     template <>
     struct flatten_impl<experimental::types_tag> {
         template <typename Xs>
@@ -266,7 +291,6 @@ BOOST_HANA_NAMESPACE_BEGIN
             return types_detail::unpack_flatten(static_cast<Xs&&>(xs), hana::experimental::make_types);
         }
     };
-#endif
 
     // MonadPlus
 
@@ -293,14 +317,6 @@ BOOST_HANA_NAMESPACE_BEGIN
             -> experimental::types<U, T...>
         { return {}; }
     };
-
-    // Sequence
-
-    template <>
-    struct Sequence<experimental::types_tag> {
-        static constexpr bool value = true;
-    };
-
 BOOST_HANA_NAMESPACE_END
 
 #endif // !BOOST_HANA_EXPERIMENTAL_TYPES_HPP
