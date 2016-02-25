@@ -13,13 +13,19 @@ Distributed under the Boost Software License, Version 1.0.
 #include <boost/hana/bool.hpp>
 #include <boost/hana/concept/metafunction.hpp>
 #include <boost/hana/config.hpp>
+#include <boost/hana/fwd/append.hpp>
 #include <boost/hana/detail/any_of.hpp>
+#include <boost/hana/detail/unpack_flatten.hpp>
 #include <boost/hana/fwd/at.hpp>
+#include <boost/hana/fwd/concat.hpp>
 #include <boost/hana/fwd/contains.hpp>
 #include <boost/hana/fwd/core/tag_of.hpp>
+#include <boost/hana/fwd/core/to.hpp>
 #include <boost/hana/fwd/equal.hpp>
+#include <boost/hana/fwd/flatten.hpp>
 #include <boost/hana/fwd/is_empty.hpp>
 #include <boost/hana/fwd/core/make.hpp>
+#include <boost/hana/fwd/prepend.hpp>
 #include <boost/hana/fwd/transform.hpp>
 #include <boost/hana/fwd/unpack.hpp>
 #include <boost/hana/type.hpp>
@@ -51,7 +57,9 @@ BOOST_HANA_NAMESPACE_BEGIN
             using type = types;
         };
 
-        constexpr auto make_types = make<experimental::types_tag>;
+        constexpr auto make_types = make<types_tag>;
+
+        constexpr auto to_types = to<types_tag>;
     } // end namespace experimental
 
     template <typename ...T>
@@ -60,15 +68,48 @@ BOOST_HANA_NAMESPACE_BEGIN
     };
 
     template <>
+    struct to_impl<hana::experimental::types_tag, hana::tuple_tag> {
+        template <typename ...T>
+        static constexpr auto apply(hana::tuple<T...> const&)
+            -> hana::experimental::types<T...>
+        { return {}; }
+    };
+
+    template <typename F>
+    struct to_impl<hana::experimental::types_tag, F, when<
+        hana::Foldable<F>::value
+        && !hana::is_a<hana::experimental::types_tag, F>
+    >> : embedding<Sequence<F>::value> {
+        template <typename Xs>
+        static constexpr decltype(auto) apply(Xs&& xs)
+        { return hana::unpack(static_cast<Xs&&>(xs),
+            hana::experimental::make_types ^hana::on^ hana::decltype_); }
+    };
+
+    template <>
     struct make_impl<experimental::types_tag> {
         template <typename ...T>
-        static constexpr auto apply(T const&...) 
+        static constexpr auto apply(T const&...)
             -> const experimental::types<typename T::type...>
         {
             return {};
         }
     };
 
+    namespace types_detail {
+        template <typename T>
+        struct member_representation {
+            using type = hana::type<T>;
+        };
+
+        template <typename ...T>
+        struct member_representation<hana::experimental::types<T...>> {
+            using type = hana::experimental::types<T...>;
+        };
+
+        template <typename ...T>
+        using member_rep_t = typename member_representation<T...>::type;
+    }
     // Foldable
     template <>
     struct unpack_impl<hana::experimental::types_tag> {
@@ -76,7 +117,7 @@ BOOST_HANA_NAMESPACE_BEGIN
             !hana::Metafunction<F>::value
         >::type>
         static constexpr decltype(auto) apply(hana::experimental::types<T...> const&, F&& f) {
-            return static_cast<F&&>(f)(hana::type<T>{}...);
+            return static_cast<F&&>(f)(types_detail::member_rep_t<T>{}...);
         }
 
         template <typename ...T, typename F, typename = typename std::enable_if<
@@ -89,7 +130,7 @@ BOOST_HANA_NAMESPACE_BEGIN
     template <>
     struct length_impl<hana::experimental::types_tag> {
         template <typename ...T>
-        static constexpr auto apply(experimental::types_tag<T...>)
+        static constexpr auto apply(experimental::types<T...> const&)
             -> hana::size_t<sizeof...(T)>
         { return {}; }
     };
@@ -101,7 +142,7 @@ BOOST_HANA_NAMESPACE_BEGIN
             !hana::Metafunction<F>::value
         >::type>
         static constexpr auto apply(hana::experimental::types<T...> const&, F&& f)
-            -> hana::experimental::types<typename decltype(f(hana::type<T>{}))::type...>
+            -> hana::experimental::types<typename decltype(f(types_detail::member_rep_t<T>{}))::type...>
         { return {}; }
 
         template <typename ...T, typename F, typename = typename std::enable_if<
@@ -135,7 +176,7 @@ BOOST_HANA_NAMESPACE_BEGIN
         apply(hana::experimental::types<T...> const&, N const&) {
             using Indexer = types_detail::indexer<std::make_index_sequence<sizeof...(T)>, T...>;
             using Nth = typename decltype(types_detail::get_elt<N::value>(Indexer{}))::type;
-            return hana::type<Nth>{};
+            return types_detail::member_rep_t<Nth>{};
         }
     };
 
@@ -197,12 +238,37 @@ BOOST_HANA_NAMESPACE_BEGIN
         { return {}; }
     };
 
-    // Sequence
+    namespace types_detail {
+        template <typename ...Xs>
+        struct make_flatten_indices {
+            using type = detail::flatten_indices<
+                decltype(hana::length(Xs{}))::value...
+            >;
+        };
 
+        // Alternate implementation of `unpack_flatten` that uses `experimental::types`
+        template <typename Xs, typename F>
+        constexpr decltype(auto) unpack_flatten(Xs&& xs, F&& f) {
+            using Indices = typename decltype(hana::unpack(experimental::to_types(xs),
+                hana::metafunction<make_flatten_indices>))::type;
+            return Indices::apply(static_cast<Xs&&>(xs), static_cast<F&&>(f),
+                            std::make_index_sequence<Indices::flat_length>{});
+        }
+    }
+
+    // Monad
+
+#if 0
     template <>
-    struct Sequence<experimental::types_tag> {
-        static constexpr bool value = true;
+    struct flatten_impl<experimental::types_tag> {
+        template <typename Xs>
+        static constexpr auto apply(Xs&& xs) {
+            return types_detail::unpack_flatten(static_cast<Xs&&>(xs), hana::experimental::make_types);
+        }
     };
+#endif
+
+    // MonadPlus
 
     template <>
     struct append_impl<experimental::types_tag> {
@@ -226,6 +292,13 @@ BOOST_HANA_NAMESPACE_BEGIN
         static constexpr auto apply(experimental::types<T...> const&, U const&)
             -> experimental::types<U, T...>
         { return {}; }
+    };
+
+    // Sequence
+
+    template <>
+    struct Sequence<experimental::types_tag> {
+        static constexpr bool value = true;
     };
 
 BOOST_HANA_NAMESPACE_END
