@@ -277,9 +277,11 @@ BOOST_HANA_NAMESPACE_BEGIN
 
     template <>
     struct lift_impl<hana::experimental::types_tag> {
+        // this must be wrong
         template <typename X>
-        static constexpr decltype(auto) apply(X&& x)
-        { return hana::experimental::make_types(static_cast<X&&>(x)); }
+        static constexpr auto apply(X const&)
+            -> const hana::experimental::types<X>
+        { return {}; }
     };
 
     // Monad
@@ -307,6 +309,13 @@ BOOST_HANA_NAMESPACE_BEGIN
         template <typename ...T, typename ...U>
         static constexpr auto apply(experimental::types<T...> const&, experimental::types<U...> const&)
             -> experimental::types<T..., U...>
+        { return {}; }
+    };
+
+    template <>
+    struct empty_impl<experimental::types_tag> {
+        static constexpr auto apply()
+            -> experimental::types<>
         { return {}; }
     };
 
