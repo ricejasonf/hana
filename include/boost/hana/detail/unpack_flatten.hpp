@@ -23,14 +23,24 @@ Distributed under the Boost Software License, Version 1.0.
 
 BOOST_HANA_NAMESPACE_BEGIN namespace detail {
     template <std::size_t ...Lengths>
-    struct flatten_indices {
+    constexpr std::size_t flatten_indices_length_sum() {
         // avoid empty arrays by appending 0 to `lengths`
-        static constexpr std::size_t lengths[] = {Lengths..., 0};
-        static constexpr auto flat_length =
-            detail::accumulate(lengths, lengths + sizeof...(Lengths), 0);
+        const std::size_t lengths[] = {Lengths..., 0};
+        std::size_t x = 0;
+        for (std::size_t i = 0; i < sizeof...(Lengths); i++) {
+            x += lengths[i];
+        }
+        return x;
+    }
+ 
+    template <std::size_t ...Lengths>
+    struct flatten_indices {
+        static constexpr auto flat_length = flatten_indices_length_sum<Lengths...>();
 
         template <bool Inner>
         static constexpr auto compute() {
+            // avoid empty arrays by appending 0 to `lengths`
+            const std::size_t lengths[] = {Lengths..., 0};
             detail::array<std::size_t, flat_length> indices{};
             for (std::size_t index = 0, i = 0; i < sizeof...(Lengths); ++i)
                 for (std::size_t j = 0; j < lengths[i]; ++j, ++index)

@@ -78,11 +78,14 @@ BOOST_HANA_NAMESPACE_BEGIN
 
         template <bool ...b>
         struct group_indices {
-            static constexpr bool bs[] = {b...};
-            static constexpr std::size_t n_groups =
-                    detail::count(bs, bs + sizeof(bs), false) + 1;
+            static constexpr std::size_t init_n_groups() {
+                constexpr bool bs[] = {b...};
+                return detail::count(bs, bs + sizeof(bs), false) + 1;
+            }
+            static constexpr std::size_t n_groups = init_n_groups();
 
             static constexpr auto compute_info() {
+                constexpr bool bs[] = {b...};
                 detail::array<std::size_t, n_groups> sizes{}, offsets{};
                 for (std::size_t g = 0, i = 0, offset = 0; g < n_groups; ++g) {
                     offsets[g] = offset;
