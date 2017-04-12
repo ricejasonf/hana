@@ -39,8 +39,9 @@ include(CheckCXXCompilerFlag)
 # On Clang for Windows, -std=c++14 is not needed (and does not work).
 if (NOT (MSVC AND ${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang"))
     # TODO: Set these as interface properties when supported
-    set(CMAKE_CXX_STANDARD 14)
+    #set(CMAKE_CXX_STANDARD 14)
     set(CMAKE_CXX_STANDARD_REQUIRED YES)
+    add_definitions(-std=c++1z)
 endif()
 
 install(TARGETS hana EXPORT HanaConfig)
