@@ -5,7 +5,7 @@
 #ifndef BOOST_HANA_TEST_EXT_BOOST_FUSION_DEQUE_AUTO_SPECS_HPP
 #define BOOST_HANA_TEST_EXT_BOOST_FUSION_DEQUE_AUTO_SPECS_HPP
 
-#include <boost/hana/ext/boost/fusion/deque.hpp>
+#include <parmexpr/hana/ext/boost/fusion/deque.hpp>
 
 #include <boost/fusion/container/deque.hpp>
 #include <boost/fusion/container/generation/make_deque.hpp>

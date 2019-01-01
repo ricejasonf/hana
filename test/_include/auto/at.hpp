@@ -5,10 +5,10 @@
 #ifndef BOOST_HANA_TEST_AUTO_AT_HPP
 #define BOOST_HANA_TEST_AUTO_AT_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/at.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/integral_constant.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/at.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -19,7 +19,7 @@ namespace _test_at_detail { template <int> struct invalid { }; }
 
 
 TestCase test_at{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
     using _test_at_detail::invalid;
 

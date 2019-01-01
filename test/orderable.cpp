@@ -2,16 +2,16 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/concept/orderable.hpp>
-#include <boost/hana/greater.hpp>
-#include <boost/hana/greater_equal.hpp>
-#include <boost/hana/less.hpp>
-#include <boost/hana/less_equal.hpp>
-#include <boost/hana/max.hpp>
-#include <boost/hana/min.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/concept/orderable.hpp>
+#include <parmexpr/hana/greater.hpp>
+#include <parmexpr/hana/greater_equal.hpp>
+#include <parmexpr/hana/less.hpp>
+#include <parmexpr/hana/less_equal.hpp>
+#include <parmexpr/hana/max.hpp>
+#include <parmexpr/hana/min.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <laws/comparable.hpp>
@@ -19,7 +19,7 @@
 
 #include <string>
 #include <type_traits>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 using namespace std::literals;
 
 
@@ -37,7 +37,7 @@ template <typename T, typename U, typename = std::enable_if_t<
 constexpr bool operator<(T a, U b)
 { return a.value < b.value; }
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <typename T, typename U>
     struct equal_impl<T, U, when<
         (std::is_same<T, ord1>{} || std::is_same<T, ord2>{}) &&

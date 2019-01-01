@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_LAWS_GROUP_HPP
 #define BOOST_HANA_TEST_LAWS_GROUP_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/bool.hpp>
-#include <boost/hana/concept/comparable.hpp>
-#include <boost/hana/core/when.hpp>
-#include <boost/hana/concept/group.hpp>
-#include <boost/hana/lazy.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/concept/comparable.hpp>
+#include <parmexpr/hana/core/when.hpp>
+#include <parmexpr/hana/concept/group.hpp>
+#include <parmexpr/hana/lazy.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace boost { namespace hana { namespace test {
+namespace parmexpr { namespace hana { namespace test {
     template <typename G, typename = when<true>>
     struct TestGroup : TestGroup<G, laws> {
         using TestGroup<G, laws>::TestGroup;
@@ -88,6 +88,6 @@ namespace boost { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace boost::hana::test
+}}} // end namespace parmexpr::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_GROUP_HPP

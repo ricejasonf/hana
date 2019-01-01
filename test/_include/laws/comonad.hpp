@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_LAWS_COMONAD_HPP
 #define BOOST_HANA_TEST_LAWS_COMONAD_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/concept/comonad.hpp>
-#include <boost/hana/concept/comparable.hpp>
-#include <boost/hana/core/when.hpp>
-#include <boost/hana/concept/foldable.hpp>
-#include <boost/hana/concept/functor.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/concept/comonad.hpp>
+#include <parmexpr/hana/concept/comparable.hpp>
+#include <parmexpr/hana/core/when.hpp>
+#include <parmexpr/hana/concept/foldable.hpp>
+#include <parmexpr/hana/concept/functor.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace boost { namespace hana { namespace test {
+namespace parmexpr { namespace hana { namespace test {
     template <typename W, typename = when<true>>
     struct TestComonad : TestComonad<W, laws> {
         using TestComonad<W, laws>::TestComonad;
@@ -48,6 +48,6 @@ namespace boost { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace boost::hana::test
+}}} // end namespace parmexpr::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_COMONAD_HPP

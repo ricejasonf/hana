@@ -5,29 +5,29 @@
 #ifndef BOOST_HANA_TEST_LAWS_COMPARABLE_HPP
 #define BOOST_HANA_TEST_LAWS_COMPARABLE_HPP
 
-#include <boost/hana/and.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/bool.hpp>
-#include <boost/hana/comparing.hpp>
-#include <boost/hana/concept/comparable.hpp>
-#include <boost/hana/concept/constant.hpp>
-#include <boost/hana/concept/product.hpp>
-#include <boost/hana/concept/sequence.hpp>
-#include <boost/hana/core/make.hpp>
-#include <boost/hana/core/when.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/first.hpp>
-#include <boost/hana/for_each.hpp>
-#include <boost/hana/lazy.hpp>
-#include <boost/hana/not_equal.hpp>
-#include <boost/hana/second.hpp>
-#include <boost/hana/value.hpp>
+#include <parmexpr/hana/and.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/comparing.hpp>
+#include <parmexpr/hana/concept/comparable.hpp>
+#include <parmexpr/hana/concept/constant.hpp>
+#include <parmexpr/hana/concept/product.hpp>
+#include <parmexpr/hana/concept/sequence.hpp>
+#include <parmexpr/hana/core/make.hpp>
+#include <parmexpr/hana/core/when.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/first.hpp>
+#include <parmexpr/hana/for_each.hpp>
+#include <parmexpr/hana/lazy.hpp>
+#include <parmexpr/hana/not_equal.hpp>
+#include <parmexpr/hana/second.hpp>
+#include <parmexpr/hana/value.hpp>
 
 
 #include <laws/base.hpp>
 
 
-namespace boost { namespace hana { namespace test {
+namespace parmexpr { namespace hana { namespace test {
     template <typename T, typename = hana::when<true>>
     struct TestComparable : TestComparable<T, laws> {
         using TestComparable<T, laws>::TestComparable;
@@ -162,6 +162,6 @@ namespace boost { namespace hana { namespace test {
             )));
         }
     };
-}}} // end namespace boost::hana::test
+}}} // end namespace parmexpr::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_COMPARABLE_HPP

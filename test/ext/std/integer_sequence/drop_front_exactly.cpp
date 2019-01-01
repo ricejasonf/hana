@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/drop_front_exactly.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/ext/std/integer_sequence.hpp>
-#include <boost/hana/integral_constant.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/drop_front_exactly.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/ext/std/integer_sequence.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
 
 #include <utility>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 int main() {

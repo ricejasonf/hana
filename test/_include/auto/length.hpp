@@ -5,10 +5,10 @@
 #ifndef BOOST_HANA_TEST_AUTO_LENGTH_HPP
 #define BOOST_HANA_TEST_AUTO_LENGTH_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/length.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/length.hpp>
 
 #include "test_case.hpp"
 
@@ -16,7 +16,7 @@
 namespace _test_length_detail { template <int> struct undefined { }; }
 
 TestCase test_length{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using _test_length_detail::undefined;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(

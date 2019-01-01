@@ -2,18 +2,18 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/ext/boost/tuple.hpp>
+#include <parmexpr/hana/ext/parmexpr/tuple.hpp>
 
-#include <boost/hana/bool.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/functional/always.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/functional/always.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <laws/monad_plus.hpp>
 
-#include <boost/tuple/tuple.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/tuple/tuple.hpp>
+namespace hana = parmexpr::hana;
 
 
 template <int i>
@@ -24,9 +24,9 @@ int main() {
     // Setup for the laws below
     //////////////////////////////////////////////////////////////////////////
     auto eq_tuples = hana::make_tuple(
-          ::boost::make_tuple(eq<0>{})
-        , ::boost::make_tuple(eq<0>{}, eq<1>{})
-        , ::boost::make_tuple(eq<0>{}, eq<1>{}, eq<2>{})
+          ::parmexpr::make_tuple(eq<0>{})
+        , ::parmexpr::make_tuple(eq<0>{}, eq<1>{})
+        , ::parmexpr::make_tuple(eq<0>{}, eq<1>{}, eq<2>{})
     );
 
     auto eq_values = hana::make_tuple(eq<0>{}, eq<1>{}, eq<2>{});
@@ -38,5 +38,5 @@ int main() {
     //////////////////////////////////////////////////////////////////////////
     // MonadPlus
     //////////////////////////////////////////////////////////////////////////
-    hana::test::TestMonadPlus<hana::ext::boost::tuple_tag>{eq_tuples, predicates, eq_values};
+    hana::test::TestMonadPlus<hana::ext::parmexpr::tuple_tag>{eq_tuples, predicates, eq_values};
 }

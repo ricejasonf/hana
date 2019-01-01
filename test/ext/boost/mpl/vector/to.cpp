@@ -2,18 +2,18 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/ext/boost/mpl/vector.hpp>
+#include <parmexpr/hana/ext/parmexpr/mpl/vector.hpp>
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/core/to.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/type.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/core/to.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/type.hpp>
 
 #include <support/seq.hpp>
 
-#include <boost/mpl/vector.hpp>
-namespace hana = boost::hana;
-namespace mpl = boost::mpl;
+#include <parmexpr/mpl/vector.hpp>
+namespace hana = parmexpr::hana;
+namespace mpl = parmexpr::mpl;
 
 
 struct t1; struct t2; struct t3; struct t4;
@@ -21,7 +21,7 @@ struct t1; struct t2; struct t3; struct t4;
 int main() {
     // Conversion from any `Foldable` containing `type`s
     auto foldable = ::seq;
-    auto to_vector = hana::to<hana::ext::boost::mpl::vector_tag>;
+    auto to_vector = hana::to<hana::ext::parmexpr::mpl::vector_tag>;
     BOOST_HANA_CONSTANT_CHECK(hana::equal(
         to_vector(foldable()),
         mpl::vector<>{}

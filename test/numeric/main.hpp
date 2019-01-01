@@ -2,33 +2,33 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/and.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/comparing.hpp>
-#include <boost/hana/div.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/eval_if.hpp>
-#include <boost/hana/greater.hpp>
-#include <boost/hana/greater_equal.hpp>
-#include <boost/hana/if.hpp>
-#include <boost/hana/less.hpp>
-#include <boost/hana/less_equal.hpp>
-#include <boost/hana/max.hpp>
-#include <boost/hana/min.hpp>
-#include <boost/hana/minus.hpp>
-#include <boost/hana/mod.hpp>
-#include <boost/hana/mult.hpp>
-#include <boost/hana/negate.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/not_equal.hpp>
-#include <boost/hana/one.hpp>
-#include <boost/hana/or.hpp>
-#include <boost/hana/ordering.hpp>
-#include <boost/hana/plus.hpp>
-#include <boost/hana/power.hpp>
-#include <boost/hana/tuple.hpp>
-#include <boost/hana/while.hpp>
-#include <boost/hana/zero.hpp>
+#include <parmexpr/hana/and.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/comparing.hpp>
+#include <parmexpr/hana/div.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/eval_if.hpp>
+#include <parmexpr/hana/greater.hpp>
+#include <parmexpr/hana/greater_equal.hpp>
+#include <parmexpr/hana/if.hpp>
+#include <parmexpr/hana/less.hpp>
+#include <parmexpr/hana/less_equal.hpp>
+#include <parmexpr/hana/max.hpp>
+#include <parmexpr/hana/min.hpp>
+#include <parmexpr/hana/minus.hpp>
+#include <parmexpr/hana/mod.hpp>
+#include <parmexpr/hana/mult.hpp>
+#include <parmexpr/hana/negate.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/not_equal.hpp>
+#include <parmexpr/hana/one.hpp>
+#include <parmexpr/hana/or.hpp>
+#include <parmexpr/hana/ordering.hpp>
+#include <parmexpr/hana/plus.hpp>
+#include <parmexpr/hana/power.hpp>
+#include <parmexpr/hana/tuple.hpp>
+#include <parmexpr/hana/while.hpp>
+#include <parmexpr/hana/zero.hpp>
 
 #include <laws/base.hpp>
 #include <laws/comparable.hpp>
@@ -42,7 +42,7 @@
 
 #include <cstdlib>
 #include <vector>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 struct invalid {

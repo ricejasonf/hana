@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/core/make.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/not_equal.hpp> // for operator !=
-#include <boost/hana/range.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/core/make.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/not_equal.hpp> // for operator !=
+#include <parmexpr/hana/range.hpp>
+namespace hana = parmexpr::hana;
 
 
 int main() {

@@ -2,10 +2,10 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/fwd/concept/integral_constant.hpp>
-#include <boost/hana/repeat.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/fwd/concept/integral_constant.hpp>
+#include <parmexpr/hana/repeat.hpp>
+namespace hana = parmexpr::hana;
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -16,7 +16,7 @@ struct constant {
     using value_type = int;
 };
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <int i>
     struct IntegralConstant<constant<i>> {
         static constexpr bool value = true;

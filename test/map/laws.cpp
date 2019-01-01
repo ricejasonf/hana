@@ -2,15 +2,15 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/map.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/map.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <laws/comparable.hpp>
 #include <laws/foldable.hpp>
 #include <laws/searchable.hpp>
 #include <support/minimal_product.hpp>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 template <int i>

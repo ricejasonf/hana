@@ -2,11 +2,11 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/core/tag_of.hpp>
-#include <boost/hana/core/when.hpp>
+#include <parmexpr/hana/core/tag_of.hpp>
+#include <parmexpr/hana/core/when.hpp>
 
 #include <type_traits>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 template <typename T, typename ExpectedDatatype>
@@ -40,7 +40,7 @@ template struct test<NoNestedHana, NoNestedHana>;
 
 struct FullySpecializedDatatype;
 struct FullySpecialized;
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <>
     struct tag_of<FullySpecialized> {
         using type = FullySpecializedDatatype;
@@ -51,7 +51,7 @@ template struct test<FullySpecialized, FullySpecializedDatatype>;
 
 struct PartiallySpecializedDatatype;
 template <typename> struct PartiallySpecialized;
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <typename T>
     struct tag_of<PartiallySpecialized<T>> {
         using type = PartiallySpecializedDatatype;
@@ -62,7 +62,7 @@ template struct test<PartiallySpecialized<struct anything>, PartiallySpecialized
 
 struct PredicatedDatatype;
 struct Predicated { static constexpr bool predicate = true; };
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <typename T>
     struct tag_of<T, hana::when<T::predicate>> {
         using type = PredicatedDatatype;

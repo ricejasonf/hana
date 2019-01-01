@@ -4,9 +4,9 @@
 
 #include "minimal.hpp"
 
-#include <boost/hana/concept/constant.hpp>
-#include <boost/hana/value.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/concept/constant.hpp>
+#include <parmexpr/hana/value.hpp>
+namespace hana = parmexpr::hana;
 
 
 // Make sure we really satisfy Constant.

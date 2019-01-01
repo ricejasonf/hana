@@ -6,7 +6,7 @@
 #define BOOST_HANA_TEST_EXT_BOOST_FUSION_VECTOR_AUTO_SPECS_HPP
 
 #define FUSION_MAX_VECTOR_SIZE 50
-#include <boost/hana/ext/boost/fusion/vector.hpp>
+#include <parmexpr/hana/ext/boost/fusion/vector.hpp>
 
 #include <boost/fusion/container/generation/make_vector.hpp>
 #include <boost/fusion/container/vector.hpp>

@@ -5,9 +5,9 @@
 #ifndef BOOST_HANA_TEST_AUTO_GROUP_HPP
 #define BOOST_HANA_TEST_AUTO_GROUP_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/group.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/group.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -15,7 +15,7 @@
 
 
 TestCase test_group{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     struct undefined { };

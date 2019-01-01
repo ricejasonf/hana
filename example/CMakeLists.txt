@@ -1,6 +1,6 @@
 # Copyright Louis Dionne 2013-2017
 # Distributed under the Boost Software License, Version 1.0.
-# (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
+# (See accompanying file LICENSE.md or copy at http://parmexpr.org/LICENSE_1_0.txt)
 
 add_custom_target(examples COMMENT "Build all the examples.")
 add_dependencies(hana_check examples)
@@ -10,7 +10,7 @@ add_dependencies(hana_check examples)
 # Take note of files that depend on Boost
 ##############################################################################
 list(APPEND EXAMPLES_REQUIRING_BOOST
-        "ext/boost/*.cpp"
+        "ext/parmexpr/*.cpp"
         "tutorial/appendix_mpl.cpp"
         "tutorial/ext/fusion_to_hana.cpp"
         "tutorial/ext/mpl_vector.cpp"
@@ -51,12 +51,12 @@ check_cxx_compiler_flag(-Wno-unused-parameter BOOST_HANA_HAS_WNO_UNUSED_PARAMETE
 check_cxx_compiler_flag(-Wno-unused-lambda-capture BOOST_HANA_HAS_WNO_UNUSED_LAMBDA_CAPTURE)
 
 foreach(_file IN LISTS EXAMPLES)
-    boost_hana_target_name_for(_target "${_file}")
+    parmexpr_hana_target_name_for(_target "${_file}")
     add_executable(${_target} EXCLUDE_FROM_ALL "${_file}")
     add_test(${_target} "${CMAKE_CURRENT_BINARY_DIR}/${_target}")
-    boost_hana_set_test_properties(${_target})
+    parmexpr_hana_set_test_properties(${_target})
     if (_file IN_LIST EXAMPLES_REQUIRING_BOOST)
-        target_link_libraries(${_target} PRIVATE Boost::boost)
+        target_link_libraries(${_target} PRIVATE Boost::parmexpr)
     endif()
     if (BOOST_HANA_HAS_WNO_UNUSED_PARAMETER)
         target_compile_options(${_target} PRIVATE -Wno-unused-parameter)

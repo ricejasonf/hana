@@ -5,9 +5,9 @@
 #ifndef TEST_SUPPORT_TRACKED_MOVE_ONLY_HPP
 #define TEST_SUPPORT_TRACKED_MOVE_ONLY_HPP
 
-#include <boost/hana/bool.hpp>
-#include <boost/hana/fwd/hash.hpp>
-#include <boost/hana/type.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/fwd/hash.hpp>
+#include <parmexpr/hana/type.hpp>
 
 #include <support/tracked.hpp>
 
@@ -28,13 +28,13 @@ struct TrackedMoveOnly : Tracked {
 
 template <int i, int j>
 constexpr auto operator==(TrackedMoveOnly<i> const&, TrackedMoveOnly<j> const&)
-{ return boost::hana::bool_c<i == j>; }
+{ return parmexpr::hana::bool_c<i == j>; }
 
 template <int i, int j>
 constexpr auto operator!=(TrackedMoveOnly<i> const&, TrackedMoveOnly<j> const&)
-{ return boost::hana::bool_c<i != j>; }
+{ return parmexpr::hana::bool_c<i != j>; }
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <int i>
     struct hash_impl<TrackedMoveOnly<i>> {
         static constexpr auto apply(TrackedMoveOnly<i> const&)

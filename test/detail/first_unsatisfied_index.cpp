@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/detail/first_unsatisfied_index.hpp>
+#include <parmexpr/hana/detail/first_unsatisfied_index.hpp>
 
-#include <boost/hana/not_equal.hpp>
+#include <parmexpr/hana/not_equal.hpp>
 #include <laws/base.hpp>
 
 #include <type_traits>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 using hana::test::ct_eq;
 
 

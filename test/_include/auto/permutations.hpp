@@ -5,18 +5,18 @@
 #ifndef BOOST_HANA_TEST_AUTO_PERMUTATIONS_HPP
 #define BOOST_HANA_TEST_AUTO_PERMUTATIONS_HPP
 
-#include <boost/hana/and.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/is_subset.hpp>
-#include <boost/hana/permutations.hpp>
+#include <parmexpr/hana/and.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/is_subset.hpp>
+#include <parmexpr/hana/permutations.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_permutations{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     auto is_permutation = [](auto xs, auto ys) {

@@ -2,12 +2,12 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/experimental/types.hpp>
-#include <boost/hana/transform.hpp>
-#include <boost/hana/type.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/experimental/types.hpp>
+#include <parmexpr/hana/transform.hpp>
+#include <parmexpr/hana/type.hpp>
+namespace hana = parmexpr::hana;
 
 
 template <typename ...>

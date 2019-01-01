@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_AUTO_INSERT_HPP
 #define BOOST_HANA_TEST_AUTO_INSERT_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/insert.hpp>
-#include <boost/hana/integral_constant.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/insert.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_insert{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     auto z = ct_eq<999>{};

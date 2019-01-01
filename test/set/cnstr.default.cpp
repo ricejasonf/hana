@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/bool.hpp>
-#include <boost/hana/fwd/hash.hpp>
-#include <boost/hana/set.hpp>
-#include <boost/hana/type.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/fwd/hash.hpp>
+#include <parmexpr/hana/set.hpp>
+#include <parmexpr/hana/type.hpp>
 
 #include <type_traits>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 template <int i>
@@ -35,7 +35,7 @@ auto operator==(Default<i> const&, Default<j> const&) { return hana::bool_<i == 
 template <int i, int j>
 auto operator!=(Default<i> const&, Default<j> const&) { return hana::bool_<i != j>{}; }
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <int i>
     struct hash_impl<NoDefault<i>> {
         static constexpr auto apply(NoDefault<i> const&)

@@ -2,10 +2,10 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/ext/std/integer_sequence.hpp>
-#include <boost/hana/ext/std/integral_constant.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/ext/std/integer_sequence.hpp>
+#include <parmexpr/hana/ext/std/integral_constant.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/comparable.hpp>
 #include <laws/foldable.hpp>
@@ -14,7 +14,7 @@
 
 #include <type_traits>
 #include <utility>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 auto sequences = hana::make_tuple(

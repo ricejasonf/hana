@@ -5,10 +5,10 @@
 #ifndef BOOST_HANA_TEST_AUTO_PARTITION_HPP
 #define BOOST_HANA_TEST_AUTO_PARTITION_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/contains.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/partition.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/contains.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/partition.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -16,7 +16,7 @@
 
 
 TestCase test_partition{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     struct undefined { };

@@ -2,23 +2,23 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/lazy.hpp>
+#include <parmexpr/hana/lazy.hpp>
 
-#include <boost/hana/ap.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/chain.hpp>
-#include <boost/hana/concept/comparable.hpp>
-#include <boost/hana/config.hpp>
-#include <boost/hana/duplicate.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/eval.hpp>
-#include <boost/hana/extend.hpp>
-#include <boost/hana/extract.hpp>
-#include <boost/hana/flatten.hpp>
-#include <boost/hana/functional/compose.hpp>
-#include <boost/hana/lift.hpp>
-#include <boost/hana/transform.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/ap.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/chain.hpp>
+#include <parmexpr/hana/concept/comparable.hpp>
+#include <parmexpr/hana/config.hpp>
+#include <parmexpr/hana/duplicate.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/eval.hpp>
+#include <parmexpr/hana/extend.hpp>
+#include <parmexpr/hana/extract.hpp>
+#include <parmexpr/hana/flatten.hpp>
+#include <parmexpr/hana/functional/compose.hpp>
+#include <parmexpr/hana/lift.hpp>
+#include <parmexpr/hana/transform.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/applicative.hpp>
 #include <laws/base.hpp>
@@ -29,11 +29,11 @@
 
 #include <array>
 #include <iostream>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 using hana::test::ct_eq;
 
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     // We provide this instance for unit tests only because it is _so_ much
     // more convenient, but this instance is too dangerous for general usage.
     // See the documentation of `hana::lazy` for more info.

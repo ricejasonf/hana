@@ -5,13 +5,13 @@
 #ifndef BOOST_HANA_TEST_AUTO_SORT_HPP
 #define BOOST_HANA_TEST_AUTO_SORT_HPP
 
-#include <boost/hana/all_of.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/less.hpp>
-#include <boost/hana/permutations.hpp>
-#include <boost/hana/sort.hpp>
-#include <boost/hana/transform.hpp>
+#include <parmexpr/hana/all_of.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/less.hpp>
+#include <parmexpr/hana/permutations.hpp>
+#include <parmexpr/hana/sort.hpp>
+#include <parmexpr/hana/transform.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -19,7 +19,7 @@
 
 
 TestCase test_sort{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
     using hana::test::ct_ord;
 

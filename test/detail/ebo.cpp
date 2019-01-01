@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/detail/ebo.hpp>
+#include <parmexpr/hana/detail/ebo.hpp>
 
-#include <boost/hana/assert.hpp>
+#include <parmexpr/hana/assert.hpp>
 
 #include <string>
 #include <type_traits>
 #include <utility>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 using hana::detail::ebo;
 
 

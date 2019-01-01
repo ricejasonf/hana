@@ -5,16 +5,16 @@
 #ifndef BOOST_HANA_TEST_AUTO_AP_HPP
 #define BOOST_HANA_TEST_AUTO_AP_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/ap.hpp>
-#include <boost/hana/equal.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/ap.hpp>
+#include <parmexpr/hana/equal.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_ap{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     hana::test::_injection<0> f{};

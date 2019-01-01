@@ -5,9 +5,9 @@
 #ifndef TEST_SUPPORT_MINIMAL_PRODUCT_HPP
 #define TEST_SUPPORT_MINIMAL_PRODUCT_HPP
 
-#include <boost/hana/fwd/core/make.hpp>
-#include <boost/hana/fwd/first.hpp>
-#include <boost/hana/fwd/second.hpp>
+#include <parmexpr/hana/fwd/core/make.hpp>
+#include <parmexpr/hana/fwd/first.hpp>
+#include <parmexpr/hana/fwd/second.hpp>
 
 #include <type_traits>
 
@@ -32,7 +32,7 @@ struct make_minimal_product {
 
 constexpr make_minimal_product minimal_product{};
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     //////////////////////////////////////////////////////////////////////////
     // Product
     //////////////////////////////////////////////////////////////////////////
@@ -56,6 +56,6 @@ namespace boost { namespace hana {
         static constexpr decltype(auto) apply(P&& p)
         { return p.snd; }
     };
-}} // end namespace boost::hana
+}} // end namespace parmexpr::hana
 
 #endif // !TEST_SUPPORT_MINIMAL_PRODUCT_HPP

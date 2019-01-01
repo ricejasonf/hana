@@ -4,10 +4,10 @@
 
 #include "minimal.hpp"
 
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/constant.hpp>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 int main() {

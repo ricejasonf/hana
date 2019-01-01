@@ -8,7 +8,7 @@
 // Define this if you want Tracked objects to print information to stderr.
 // #define TRACKED_PRINT_STUFF
 
-#include <boost/hana/assert.hpp>
+#include <parmexpr/hana/assert.hpp>
 
 #ifdef TRACKED_PRINT_STUFF
 #   include <iostream>

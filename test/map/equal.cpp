@@ -2,15 +2,15 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/map.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/not_equal.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/map.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/not_equal.hpp>
 
 #include <laws/base.hpp>
 #include <support/minimal_product.hpp>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 template <int i>

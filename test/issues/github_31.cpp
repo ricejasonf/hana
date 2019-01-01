@@ -2,24 +2,24 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/any_of.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/bool.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/find_if.hpp>
-#include <boost/hana/fwd/at.hpp>
-#include <boost/hana/fwd/drop_front.hpp>
-#include <boost/hana/fwd/is_empty.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/optional.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/any_of.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/find_if.hpp>
+#include <parmexpr/hana/fwd/at.hpp>
+#include <parmexpr/hana/fwd/drop_front.hpp>
+#include <parmexpr/hana/fwd/is_empty.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/optional.hpp>
+namespace hana = parmexpr::hana;
 
 
 // A simple infinite Iterable.
 template <int i>
 struct counter { };
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <int i>
     struct at_impl<counter<i>> {
         template <typename N>

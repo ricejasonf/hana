@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/core/to.hpp>
+#include <parmexpr/hana/core/to.hpp>
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/core/tag_of.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/core/tag_of.hpp>
 
 #include <string>
 #include <type_traits>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 template <typename X, typename Y>
@@ -38,7 +38,7 @@ struct specialized_to {
     using hana_tag = SpecializedTo;
 };
 
-namespace boost { namespace hana {
+namespace parmexpr { namespace hana {
     template <>
     struct to_impl<SpecializedTo, SpecializedFrom> {
         template <typename T>

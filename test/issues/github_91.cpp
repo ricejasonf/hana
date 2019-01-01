@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/concept/comparable.hpp>
-#include <boost/hana/concept/euclidean_ring.hpp>
-#include <boost/hana/concept/group.hpp>
-#include <boost/hana/concept/monoid.hpp>
-#include <boost/hana/concept/orderable.hpp>
-#include <boost/hana/concept/ring.hpp>
-#include <boost/hana/integral_constant.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/concept/comparable.hpp>
+#include <parmexpr/hana/concept/euclidean_ring.hpp>
+#include <parmexpr/hana/concept/group.hpp>
+#include <parmexpr/hana/concept/monoid.hpp>
+#include <parmexpr/hana/concept/orderable.hpp>
+#include <parmexpr/hana/concept/ring.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+namespace hana = parmexpr::hana;
 
 
 using T = decltype(hana::int_c<1>);

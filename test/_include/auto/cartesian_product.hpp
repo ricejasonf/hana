@@ -5,16 +5,16 @@
 #ifndef BOOST_HANA_TEST_AUTO_CARTESIAN_PRODUCT_HPP
 #define BOOST_HANA_TEST_AUTO_CARTESIAN_PRODUCT_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/cartesian_product.hpp>
-#include <boost/hana/equal.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/cartesian_product.hpp>
+#include <parmexpr/hana/equal.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_cartesian_product{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     // 0 lists

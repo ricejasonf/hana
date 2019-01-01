@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/at_key.hpp>
-#include <boost/hana/fold_left.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/map.hpp>
-#include <boost/hana/pair.hpp>
-#include <boost/hana/range.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/at_key.hpp>
+#include <parmexpr/hana/fold_left.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/map.hpp>
+#include <parmexpr/hana/pair.hpp>
+#include <parmexpr/hana/range.hpp>
+namespace hana = parmexpr::hana;
 
 
 //

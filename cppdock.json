@@ -1,0 +1,16 @@
+{
+  "cppdock": {
+    "name": "hana"
+  },
+  "platforms": {
+    "develop": {
+      "type": "linux_x64",
+      "deps": []
+    },
+    "parmexpr": {
+      "type": "linux_x64",
+      "base_image": "ricejasonf/parmexpr",
+      "deps": []
+    }
+  }
+}

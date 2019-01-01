@@ -2,9 +2,9 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/adapt_struct.hpp>
-#include <boost/hana/define_struct.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/adapt_struct.hpp>
+#include <parmexpr/hana/define_struct.hpp>
+namespace hana = parmexpr::hana;
 
 
 struct Person {

@@ -2,19 +2,19 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/ext/boost/mpl/list.hpp>
+#include <parmexpr/hana/ext/parmexpr/mpl/list.hpp>
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/unpack.hpp>
-#include <boost/hana/type.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/unpack.hpp>
+#include <parmexpr/hana/type.hpp>
 
 #include <laws/base.hpp>
 #include <laws/foldable.hpp>
 
-#include <boost/mpl/list.hpp>
-namespace hana = boost::hana;
-namespace mpl = boost::mpl;
+#include <parmexpr/mpl/list.hpp>
+namespace hana = parmexpr::hana;
+namespace mpl = parmexpr::mpl;
 
 
 struct t1; struct t2; struct t3; struct t4;
@@ -53,5 +53,5 @@ int main() {
         , mpl::list<t1, t2, t3, t4>{}
     );
 
-    hana::test::TestFoldable<hana::ext::boost::mpl::list_tag>{lists};
+    hana::test::TestFoldable<hana::ext::parmexpr::mpl::list_tag>{lists};
 }

@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/core/tag_of.hpp>
-#include <boost/hana/ext/std/integral_constant.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/pair.hpp>
+#include <parmexpr/hana/core/tag_of.hpp>
+#include <parmexpr/hana/ext/std/integral_constant.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/pair.hpp>
 
 #include <type_traits>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 int main() {

@@ -2,25 +2,25 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/integral_constant.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
 
-#include <boost/hana/and.hpp>
-#include <boost/hana/div.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/greater.hpp>
-#include <boost/hana/greater_equal.hpp>
-#include <boost/hana/less.hpp>
-#include <boost/hana/less_equal.hpp>
-#include <boost/hana/minus.hpp>
-#include <boost/hana/mod.hpp>
-#include <boost/hana/mult.hpp>
-#include <boost/hana/negate.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/not_equal.hpp>
-#include <boost/hana/or.hpp>
-#include <boost/hana/plus.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/and.hpp>
+#include <parmexpr/hana/div.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/greater.hpp>
+#include <parmexpr/hana/greater_equal.hpp>
+#include <parmexpr/hana/less.hpp>
+#include <parmexpr/hana/less_equal.hpp>
+#include <parmexpr/hana/minus.hpp>
+#include <parmexpr/hana/mod.hpp>
+#include <parmexpr/hana/mult.hpp>
+#include <parmexpr/hana/negate.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/not_equal.hpp>
+#include <parmexpr/hana/or.hpp>
+#include <parmexpr/hana/plus.hpp>
+namespace hana = parmexpr::hana;
 
 
 // Arithmetic operators

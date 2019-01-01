@@ -2,17 +2,17 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/at.hpp>
-#include <boost/hana/bool.hpp>
-#include <boost/hana/first.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/pair.hpp>
-#include <boost/hana/second.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/at.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/first.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/pair.hpp>
+#include <parmexpr/hana/second.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <type_traits>
 #include <utility>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 // In GitHub issue #331, we noticed that `first` and `second` could sometimes

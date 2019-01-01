@@ -2,23 +2,23 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/ext/boost/mpl/integral_c.hpp>
+#include <parmexpr/hana/ext/parmexpr/mpl/integral_c.hpp>
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/eval_if.hpp>
-#include <boost/hana/functional/always.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/eval_if.hpp>
+#include <parmexpr/hana/functional/always.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <laws/logical.hpp>
 
-#include <boost/mpl/bool.hpp>
-#include <boost/mpl/int.hpp>
-#include <boost/mpl/integral_c.hpp>
-namespace hana = boost::hana;
-namespace mpl = boost::mpl;
+#include <parmexpr/mpl/bool.hpp>
+#include <parmexpr/mpl/int.hpp>
+#include <parmexpr/mpl/integral_c.hpp>
+namespace hana = parmexpr::hana;
+namespace mpl = parmexpr::mpl;
 
 
 int main() {
@@ -51,13 +51,13 @@ int main() {
     }
 
     // laws
-    hana::test::TestLogical<hana::ext::boost::mpl::integral_c_tag<int>>{
+    hana::test::TestLogical<hana::ext::parmexpr::mpl::integral_c_tag<int>>{
         hana::make_tuple(
             mpl::int_<-2>{}, mpl::integral_c<int, 0>{}, mpl::integral_c<int, 3>{}
         )
     };
 
-    hana::test::TestLogical<hana::ext::boost::mpl::integral_c_tag<bool>>{
+    hana::test::TestLogical<hana::ext::parmexpr::mpl::integral_c_tag<bool>>{
         hana::make_tuple(
             mpl::true_{}, mpl::false_{},
             mpl::integral_c<bool, true>{}, mpl::integral_c<bool, false>{}

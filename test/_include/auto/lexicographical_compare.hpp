@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_AUTO_LEXICOGRAPHICAL_COMPARE_HPP
 #define BOOST_HANA_TEST_AUTO_LEXICOGRAPHICAL_COMPARE_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/lexicographical_compare.hpp>
-#include <boost/hana/not.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/lexicographical_compare.hpp>
+#include <parmexpr/hana/not.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_lexicographical_compare{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_ord;
 
     struct undefined { };

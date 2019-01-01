@@ -1,6 +1,6 @@
 # Copyright Louis Dionne 2013-2017
 # Distributed under the Boost Software License, Version 1.0.
-# (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
+# (See accompanying file LICENSE.md or copy at http://parmexpr.org/LICENSE_1_0.txt)
 
 cmake_minimum_required(VERSION 3.9)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -25,12 +25,12 @@ option(BOOST_HANA_ENABLE_EXCEPTIONS
 ##############################################################################
 # Setup project
 #
-# We parse the canonical version number located in <boost/hana/version.hpp>.
+# We parse the canonical version number located in <parmexpr/hana/version.hpp>.
 # This is done to allow the library to be used without requiring a proper
 # installation during which the version would be written to this header.
 ##############################################################################
 foreach(level MAJOR MINOR PATCH)
-    file(STRINGS include/boost/hana/version.hpp
+    file(STRINGS include/parmexpr/hana/version.hpp
                  _define_${level}
                  REGEX "#define BOOST_HANA_${level}_VERSION")
     string(REGEX MATCH "([0-9]+)" _version_${level} "${_define_${level}}")
@@ -50,11 +50,7 @@ include(CheckCxxCompilerSupport)
 include(CheckCXXCompilerFlag)
 add_library(hana INTERFACE)
 target_include_directories(hana INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>")
-if (BOOST_HANA_ENABLE_CPP17)
-    target_compile_features(hana INTERFACE cxx_std_17)
-else()
-    target_compile_features(hana INTERFACE cxx_std_14)
-endif()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")
 
 # Export the `hana` library into a HanaConfig.cmake file
 install(TARGETS hana
@@ -62,7 +58,7 @@ install(TARGETS hana
         INCLUDES DESTINATION include)
 install(EXPORT HanaConfig
         DESTINATION lib/cmake/hana)
-install(DIRECTORY include/boost
+install(DIRECTORY include/parmexpr
         DESTINATION include
         FILES_MATCHING PATTERN "*.hpp")
 
@@ -70,11 +66,10 @@ install(DIRECTORY include/boost
 configure_file(cmake/hana.pc.in hana.pc @ONLY)
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/hana.pc" DESTINATION lib/pkgconfig)
 
-
 ##############################################################################
 # Function to setup common compiler flags on tests and examples
 ##############################################################################
-function(boost_hana_set_test_properties target)
+function(parmexpr_hana_set_test_properties target)
     target_link_libraries(${target} PRIVATE hana)
     set_target_properties(${target} PROPERTIES CXX_EXTENSIONS NO)
 
@@ -86,11 +81,11 @@ function(boost_hana_set_test_properties target)
     endmacro()
 
     if (NOT MSVC)
-        setflag(BOOST_HANA_HAS_FDIAGNOSTICS_COLOR        -fdiagnostics-color)
+      #setflag(BOOST_HANA_HAS_FDIAGNOSTICS_COLOR        -fdiagnostics-color)
         setflag(BOOST_HANA_HAS_FTEMPLATE_BACKTRACE_LIMIT -ftemplate-backtrace-limit=0)
         setflag(BOOST_HANA_HAS_PEDANTIC                  -pedantic)
         setflag(BOOST_HANA_HAS_WALL                      -Wall)
-        setflag(BOOST_HANA_HAS_WERROR                    -Werror)
+        #setflag(BOOST_HANA_HAS_WERROR                    -Werror)
         setflag(BOOST_HANA_HAS_WEXTRA                    -Wextra)
         setflag(BOOST_HANA_HAS_WNO_UNUSED_LOCAL_TYPEDEFS -Wno-unused-local-typedefs)
         setflag(BOOST_HANA_HAS_WWRITE_STRINGS            -Wwrite-strings)
@@ -137,7 +132,7 @@ endif()
 ##############################################################################
 # Setup custom functions to ease the creation of targets
 ##############################################################################
-#   boost_hana_target_name_for(<output variable> <source file> [ext])
+#   parmexpr_hana_target_name_for(<output variable> <source file> [ext])
 #
 # Return the target name associated to a source file. If the path of the
 # source file relative from the root of Hana is `path/to/source/file.ext`,
@@ -145,7 +140,7 @@ endif()
 #
 # The extension of the file should be specified as a last argument. If no
 # extension is specified, the `.cpp` extension is assumed.
-function(boost_hana_target_name_for out file)
+function(parmexpr_hana_target_name_for out file)
     if (NOT ARGV2)
         set(_extension ".cpp")
     else()

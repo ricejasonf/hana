@@ -2,17 +2,17 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/ext/boost/mpl/integral_c.hpp>
+#include <parmexpr/hana/ext/parmexpr/mpl/integral_c.hpp>
 
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/comparable.hpp>
 #include <laws/hashable.hpp>
 
-#include <boost/mpl/int.hpp>
-#include <boost/mpl/integral_c.hpp>
-namespace hana = boost::hana;
-namespace mpl = boost::mpl;
+#include <parmexpr/mpl/int.hpp>
+#include <parmexpr/mpl/integral_c.hpp>
+namespace hana = parmexpr::hana;
+namespace mpl = parmexpr::mpl;
 
 
 int main() {
@@ -21,6 +21,6 @@ int main() {
         mpl::integral_c<int, 1>{}, mpl::integral_c<int, 3>{}
     );
 
-    hana::test::TestComparable<hana::ext::boost::mpl::integral_c_tag<int>>{ints};
-    hana::test::TestHashable<hana::ext::boost::mpl::integral_c_tag<void>>{ints};
+    hana::test::TestComparable<hana::ext::parmexpr::mpl::integral_c_tag<int>>{ints};
+    hana::test::TestHashable<hana::ext::parmexpr::mpl::integral_c_tag<void>>{ints};
 }

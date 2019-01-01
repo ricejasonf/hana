@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/ext/std/ratio.hpp>
-#include <boost/hana/mod.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/ext/std/ratio.hpp>
+#include <parmexpr/hana/mod.hpp>
 
 #include <ratio>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 int main() {

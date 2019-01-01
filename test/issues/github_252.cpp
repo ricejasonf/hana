@@ -2,17 +2,17 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/core/is_a.hpp>
-#include <boost/hana/functional/partial.hpp>
-#include <boost/hana/product.hpp>
-#include <boost/hana/range.hpp>
-#include <boost/hana/traits.hpp>
-#include <boost/hana/transform.hpp>
-#include <boost/hana/tuple.hpp>
-#include <boost/hana/type.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/core/is_a.hpp>
+#include <parmexpr/hana/functional/partial.hpp>
+#include <parmexpr/hana/product.hpp>
+#include <parmexpr/hana/range.hpp>
+#include <parmexpr/hana/traits.hpp>
+#include <parmexpr/hana/transform.hpp>
+#include <parmexpr/hana/tuple.hpp>
+#include <parmexpr/hana/type.hpp>
 
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 int main() {
     constexpr auto type = hana::type_c<int[2][3][4]>;

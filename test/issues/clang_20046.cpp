@@ -2,8 +2,8 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/type.hpp>
-namespace hana = boost::hana;
+#include <parmexpr/hana/type.hpp>
+namespace hana = parmexpr::hana;
 
 
 template <typename ...> struct F { struct type; };

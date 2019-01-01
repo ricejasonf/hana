@@ -5,30 +5,30 @@
 #ifndef BOOST_HANA_TEST_LAWS_ORDERABLE_HPP
 #define BOOST_HANA_TEST_LAWS_ORDERABLE_HPP
 
-#include <boost/hana/and.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/bool.hpp>
-#include <boost/hana/concept/constant.hpp>
-#include <boost/hana/concept/orderable.hpp>
-#include <boost/hana/concept/product.hpp>
-#include <boost/hana/concept/sequence.hpp>
-#include <boost/hana/core/when.hpp>
-#include <boost/hana/first.hpp>
-#include <boost/hana/greater.hpp>
-#include <boost/hana/greater_equal.hpp>
-#include <boost/hana/lazy.hpp>
-#include <boost/hana/less.hpp>
-#include <boost/hana/less_equal.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/or.hpp>
-#include <boost/hana/ordering.hpp>
-#include <boost/hana/second.hpp>
-#include <boost/hana/value.hpp>
+#include <parmexpr/hana/and.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/concept/constant.hpp>
+#include <parmexpr/hana/concept/orderable.hpp>
+#include <parmexpr/hana/concept/product.hpp>
+#include <parmexpr/hana/concept/sequence.hpp>
+#include <parmexpr/hana/core/when.hpp>
+#include <parmexpr/hana/first.hpp>
+#include <parmexpr/hana/greater.hpp>
+#include <parmexpr/hana/greater_equal.hpp>
+#include <parmexpr/hana/lazy.hpp>
+#include <parmexpr/hana/less.hpp>
+#include <parmexpr/hana/less_equal.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/or.hpp>
+#include <parmexpr/hana/ordering.hpp>
+#include <parmexpr/hana/second.hpp>
+#include <parmexpr/hana/value.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace boost { namespace hana { namespace test {
+namespace parmexpr { namespace hana { namespace test {
     template <typename T, typename = when<true>>
     struct TestOrderable : TestOrderable<T, laws> {
         using TestOrderable<T, laws>::TestOrderable;
@@ -177,6 +177,6 @@ namespace boost { namespace hana { namespace test {
             ));
         }
     };
-}}} // end namespace boost::hana::test
+}}} // end namespace parmexpr::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_ORDERABLE_HPP

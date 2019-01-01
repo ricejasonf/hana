@@ -9,14 +9,14 @@ add_dependencies(hana_check tests)
 ##############################################################################
 # Take note of files that depend on Boost
 ##############################################################################
-file(GLOB_RECURSE TESTS_REQUIRING_BOOST "ext/boost/*.cpp"
+file(GLOB_RECURSE TESTS_REQUIRING_BOOST "ext/parmexpr/*.cpp"
                                         "experimental/printable/*.cpp")
 
 file(GLOB_RECURSE PUBLIC_HEADERS_REQUIRING_BOOST
     RELATIVE "${Boost.Hana_SOURCE_DIR}/include"
-    "${Boost.Hana_SOURCE_DIR}/include/boost/hana/ext/boost/*.hpp"
-    "${Boost.Hana_SOURCE_DIR}/include/boost/hana/ext/boost.hpp"
-    "${Boost.Hana_SOURCE_DIR}/include/boost/hana/experimental/printable.hpp"
+    "${Boost.Hana_SOURCE_DIR}/include/parmexpr/hana/ext/parmexpr/*.hpp"
+    "${Boost.Hana_SOURCE_DIR}/include/parmexpr/hana/ext/parmexpr.hpp"
+    "${Boost.Hana_SOURCE_DIR}/include/parmexpr/hana/experimental/printable.hpp"
 )
 
 
@@ -35,7 +35,7 @@ if (NOT ((${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang" AND
         OR (${CMAKE_CXX_COMPILER_ID} STREQUAL "AppleClang" AND
             NOT ${CMAKE_CXX_COMPILER_VERSION} VERSION_LESS 7)))
     list(APPEND EXCLUDED_PUBLIC_HEADERS
-        "boost/hana/experimental/type_name.hpp")
+        "parmexpr/hana/experimental/type_name.hpp")
     list(APPEND EXCLUDED_UNIT_TESTS "experimental/type_name.cpp")
 endif()
 
@@ -72,11 +72,11 @@ target_link_libraries(test.headers.standalone PRIVATE hana)
 add_dependencies(test.headers test.headers.standalone)
 
 if (Boost_FOUND)
-    add_header_test(test.headers.boost EXCLUDE_FROM_ALL
+    add_header_test(test.headers.parmexpr EXCLUDE_FROM_ALL
                                        HEADERS ${PUBLIC_HEADERS_REQUIRING_BOOST}
                                        EXCLUDE ${EXCLUDED_PUBLIC_HEADERS})
-    target_link_libraries(test.headers.boost PRIVATE hana Boost::boost)
-    add_dependencies(test.headers test.headers.boost)
+    target_link_libraries(test.headers.parmexpr PRIVATE hana Boost::parmexpr)
+    add_dependencies(test.headers test.headers.parmexpr)
 endif()
 
 
@@ -85,9 +85,9 @@ endif()
 # (GitHub issue 75)
 ##############################################################################
 list(APPEND EXCLUDED_UNIT_TESTS "issues/github_75/*.cpp")
-boost_hana_target_name_for(github_75 "${CMAKE_CURRENT_LIST_DIR}/issues/github_75")
+parmexpr_hana_target_name_for(github_75 "${CMAKE_CURRENT_LIST_DIR}/issues/github_75")
 add_executable(${github_75} EXCLUDE_FROM_ALL "issues/github_75/tu1.cpp" "issues/github_75/tu2.cpp")
-boost_hana_set_test_properties(${github_75})
+parmexpr_hana_set_test_properties(${github_75})
 add_test(${github_75} "${CMAKE_CURRENT_BINARY_DIR}/${github_75}")
 add_dependencies(tests ${github_75})
 
@@ -100,11 +100,11 @@ file(GLOB_RECURSE EXCLUDED_UNIT_TESTS ${EXCLUDED_UNIT_TESTS})
 list(REMOVE_ITEM UNIT_TESTS ${EXCLUDED_UNIT_TESTS})
 
 foreach(_file IN LISTS UNIT_TESTS)
-    boost_hana_target_name_for(_target "${_file}")
+    parmexpr_hana_target_name_for(_target "${_file}")
     add_executable(${_target} EXCLUDE_FROM_ALL "${_file}")
-    boost_hana_set_test_properties(${_target})
+    parmexpr_hana_set_test_properties(${_target})
     if (_file IN_LIST TESTS_REQUIRING_BOOST)
-        target_link_libraries(${_target} PRIVATE Boost::boost)
+        target_link_libraries(${_target} PRIVATE Boost::parmexpr)
     endif()
     target_include_directories(${_target} PRIVATE _include)
     add_test(${_target} "${CMAKE_CURRENT_BINARY_DIR}/${_target}")

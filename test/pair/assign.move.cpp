@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/config.hpp>
-#include <boost/hana/first.hpp>
-#include <boost/hana/pair.hpp>
-#include <boost/hana/second.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/config.hpp>
+#include <parmexpr/hana/first.hpp>
+#include <parmexpr/hana/pair.hpp>
+#include <parmexpr/hana/second.hpp>
 
 #include <utility>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 struct MoveOnly {

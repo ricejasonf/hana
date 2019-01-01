@@ -2,8 +2,8 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <boost/hana/detail/canonical_constant.hpp>
-#include <boost/hana/tuple.hpp>
+#include <parmexpr/hana/detail/canonical_constant.hpp>
+#include <parmexpr/hana/tuple.hpp>
 
 #include <laws/comparable.hpp>
 #include <laws/constant.hpp>
@@ -13,7 +13,7 @@
 #include <laws/monoid.hpp>
 #include <laws/orderable.hpp>
 #include <laws/ring.hpp>
-namespace hana = boost::hana;
+namespace hana = parmexpr::hana;
 
 
 template <typename T, T v>

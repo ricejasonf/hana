@@ -5,16 +5,16 @@
 #ifndef BOOST_HANA_TEST_AUTO_UNFOLDS_HPP
 #define BOOST_HANA_TEST_AUTO_UNFOLDS_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/fold_left.hpp>
-#include <boost/hana/fold_right.hpp>
-#include <boost/hana/if.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/optional.hpp>
-#include <boost/hana/plus.hpp>
-#include <boost/hana/unfold_left.hpp>
-#include <boost/hana/unfold_right.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/fold_left.hpp>
+#include <parmexpr/hana/fold_right.hpp>
+#include <parmexpr/hana/if.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/optional.hpp>
+#include <parmexpr/hana/plus.hpp>
+#include <parmexpr/hana/unfold_left.hpp>
+#include <parmexpr/hana/unfold_right.hpp>
 
 #include <laws/base.hpp>
 #include <support/minimal_product.hpp>
@@ -22,7 +22,7 @@
 
 
 TestCase test_unfold_left{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
 
     hana::test::_injection<0> f{};
     auto stop_at = [=](auto stop) {
@@ -58,7 +58,7 @@ TestCase test_unfold_left{[]{
 
 
 TestCase test_unfold_right{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
 
     hana::test::_injection<0> f{};
     auto stop_at = [=](auto stop) {
@@ -94,7 +94,7 @@ TestCase test_unfold_right{[]{
 
 // Make sure unfolds can be reversed under certain conditions.
 TestCase test_unfold_undo{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     auto z = ct_eq<999>{};

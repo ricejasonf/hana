@@ -5,38 +5,38 @@
 #ifndef BOOST_HANA_TEST_LAWS_MONAD_PLUS_HPP
 #define BOOST_HANA_TEST_LAWS_MONAD_PLUS_HPP
 
-#include <boost/hana/append.hpp>
-#include <boost/hana/assert.hpp>
-#include <boost/hana/bool.hpp>
-#include <boost/hana/chain.hpp>
-#include <boost/hana/concat.hpp>
-#include <boost/hana/concept/comparable.hpp>
-#include <boost/hana/concept/monad_plus.hpp>
-#include <boost/hana/concept/sequence.hpp>
-#include <boost/hana/core/make.hpp>
-#include <boost/hana/core/when.hpp>
-#include <boost/hana/cycle.hpp>
-#include <boost/hana/empty.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/filter.hpp>
-#include <boost/hana/for_each.hpp>
-#include <boost/hana/functional/capture.hpp>
-#include <boost/hana/functional/compose.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/lift.hpp>
-#include <boost/hana/not.hpp>
-#include <boost/hana/not_equal.hpp>
-#include <boost/hana/prefix.hpp>
-#include <boost/hana/prepend.hpp>
-#include <boost/hana/remove.hpp>
-#include <boost/hana/remove_if.hpp>
-#include <boost/hana/replicate.hpp>
-#include <boost/hana/suffix.hpp>
+#include <parmexpr/hana/append.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/bool.hpp>
+#include <parmexpr/hana/chain.hpp>
+#include <parmexpr/hana/concat.hpp>
+#include <parmexpr/hana/concept/comparable.hpp>
+#include <parmexpr/hana/concept/monad_plus.hpp>
+#include <parmexpr/hana/concept/sequence.hpp>
+#include <parmexpr/hana/core/make.hpp>
+#include <parmexpr/hana/core/when.hpp>
+#include <parmexpr/hana/cycle.hpp>
+#include <parmexpr/hana/empty.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/filter.hpp>
+#include <parmexpr/hana/for_each.hpp>
+#include <parmexpr/hana/functional/capture.hpp>
+#include <parmexpr/hana/functional/compose.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/lift.hpp>
+#include <parmexpr/hana/not.hpp>
+#include <parmexpr/hana/not_equal.hpp>
+#include <parmexpr/hana/prefix.hpp>
+#include <parmexpr/hana/prepend.hpp>
+#include <parmexpr/hana/remove.hpp>
+#include <parmexpr/hana/remove_if.hpp>
+#include <parmexpr/hana/replicate.hpp>
+#include <parmexpr/hana/suffix.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace boost { namespace hana { namespace test {
+namespace parmexpr { namespace hana { namespace test {
     template <typename M, typename = when<true>>
     struct TestMonadPlus : TestMonadPlus<M, laws> {
         using TestMonadPlus<M, laws>::TestMonadPlus;
@@ -611,6 +611,6 @@ namespace boost { namespace hana { namespace test {
             ));
         }
     };
-}}} // end namespace boost::hana::test
+}}} // end namespace parmexpr::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_MONAD_PLUS_HPP

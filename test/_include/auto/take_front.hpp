@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_AUTO_TAKE_FRONT_HPP
 #define BOOST_HANA_TEST_AUTO_TAKE_FRONT_HPP
 
-#include <boost/hana/assert.hpp>
-#include <boost/hana/equal.hpp>
-#include <boost/hana/integral_constant.hpp>
-#include <boost/hana/take_front.hpp>
+#include <parmexpr/hana/assert.hpp>
+#include <parmexpr/hana/equal.hpp>
+#include <parmexpr/hana/integral_constant.hpp>
+#include <parmexpr/hana/take_front.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_take{[]{
-    namespace hana = boost::hana;
+    namespace hana = parmexpr::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(
