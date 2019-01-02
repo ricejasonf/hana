@@ -11,7 +11,11 @@ Distributed under the Boost Software License, Version 1.0.
 #define BOOST_HANA_FWD_AT_HPP
 
 #include <parmexpr/hana/config.hpp>
+#include <parmexpr/hana/core/dispatch.hpp>
+#include <parmexpr/hana/core/tag_of.hpp>
 #include <parmexpr/hana/core/when.hpp>
+#include <parmexpr/hana/fwd/concept/iterable.hpp>
+#include <parmexpr/hana/fwd/integral_constant.hpp>
 
 #include <cstddef>
 
@@ -51,15 +55,21 @@ BOOST_HANA_NAMESPACE_BEGIN
         return tag-dispatched;
     };
 #else
-    template <typename It, typename = void>
-    struct at_impl : at_impl<It, when<true>> { };
+  template <typename It, typename = void>
+  struct at_impl : at_impl<It, when<true>> { };
 
-    struct at_t {
-        template <typename Xs, typename N>
-        constexpr decltype(auto) operator()(Xs&& xs, N const& n) const;
-    };
+  struct at_t {
+    template <typename Xs>
+    using Tag = typename hana::tag_of<Xs>::type;
 
-    constexpr at_t at{};
+    template <typename It>
+    using Impl = BOOST_HANA_DISPATCH_IF(at_impl<It>,
+      hana::Iterable<It>::value);
+
+    static using operator()(using auto xs, using auto n) {
+      return Impl<Tag<decltype(xs)>>::apply(xs, n);
+    }
+  } inline constexpr at{};
 #endif
 
     //! Equivalent to `at`; provided for convenience.
@@ -81,8 +91,15 @@ BOOST_HANA_NAMESPACE_BEGIN
         return hana::at(forwarded(xs), hana::size_c<n>);
     };
 #else
-    template <std::size_t n, typename Xs>
-    constexpr decltype(auto) at_c(Xs&& xs);
+  template <std::size_t n>
+  struct at_c_fn {
+    static using operator()(using auto xs) {
+      return hana::at(xs, hana::size_t<n>{});
+    }
+  };
+
+  template <std::size_t n>
+  inline constexpr at_c_fn<n> at_c{};
 #endif
 BOOST_HANA_NAMESPACE_END
 

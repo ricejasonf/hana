@@ -12,9 +12,20 @@ Distributed under the Boost Software License, Version 1.0.
 
 #include <parmexpr/hana/config.hpp>
 #include <parmexpr/hana/detail/intrinsics.hpp>
+#include <type_traits>
 
 
 namespace _hana {
+
+  // casts y to T and like x
+  template <typename T, typename X>
+  using fwd_cast_t = std::conditional_t<
+    std::is_const_v<std::remove_reference_t<X>>,
+    T const&,
+    std::conditional_t<
+      std::is_lvalue_reference_v<X>,
+      T&, T&&>>;
+
     //////////////////////////////////////////////////////////////////////////
     // ebo<K, V>
     //
@@ -61,6 +72,11 @@ namespace _hana {
         explicit constexpr ebo(T&& t)
             : V(static_cast<T&&>(t))
         { }
+
+        // this gets instantiated for every K, V
+        using get(using auto self) {
+          return static_cast<fwd_cast_t<V, decltype((self))>>(self);
+        }
     };
 
     // Specialize storage for non-empty types
@@ -74,41 +90,39 @@ namespace _hana {
         { }
 
         V data_;
+
+        // this gets instantiated for every K, V
+        using get(using auto self) {
+           return (self.data_);
+        }
     };
 
     //////////////////////////////////////////////////////////////////////////
     // ebo_get
     //////////////////////////////////////////////////////////////////////////
-    template <typename K, typename V>
-    constexpr V const& ebo_get(ebo<K, V, true> const& x)
-    { return x; }
+    template <typename K>
+    struct ebo_get {
+      template <typename V, bool is_empty>
+      static ebo<K, V, is_empty> const* f(ebo<K, V, is_empty> const*);
 
-    template <typename K, typename V>
-    constexpr V& ebo_get(ebo<K, V, true>& x)
-    { return x; }
+      template <typename Xs>
+      using Cast = fwd_cast_t<
+        std::remove_const_t<
+          std::remove_pointer_t<
+            decltype(f((std::remove_reference_t<Xs>*)0))>>,
+        Xs>;
 
-    template <typename K, typename V>
-    constexpr V&& ebo_get(ebo<K, V, true>&& x)
-    { return static_cast<V&&>(x); }
-
-
-    template <typename K, typename V>
-    constexpr V const& ebo_get(ebo<K, V, false> const& x)
-    { return x.data_; }
-
-    template <typename K, typename V>
-    constexpr V& ebo_get(ebo<K, V, false>& x)
-    { return x.data_; }
-
-    template <typename K, typename V>
-    constexpr V&& ebo_get(ebo<K, V, false>&& x)
-    { return static_cast<V&&>(x.data_); }
+      static using apply(using auto xs) {
+        return static_cast<Cast<decltype(xs)>>(xs).get();
+      }
+    };
 } // end namespace _hana
 
 BOOST_HANA_NAMESPACE_BEGIN
     namespace detail {
         using ::_hana::ebo;
         using ::_hana::ebo_get;
+        using ::_hana::fwd_cast_t;
     }
 BOOST_HANA_NAMESPACE_END
 

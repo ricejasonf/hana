@@ -10,6 +10,7 @@ Distributed under the Boost Software License, Version 1.0.
 #ifndef BOOST_HANA_FUNCTIONAL_PARTIAL_HPP
 #define BOOST_HANA_FUNCTIONAL_PARTIAL_HPP
 
+#include <parmexpr/hana/at.hpp>
 #include <parmexpr/hana/basic_tuple.hpp>
 #include <parmexpr/hana/config.hpp>
 #include <parmexpr/hana/detail/decay.hpp>

@@ -246,10 +246,10 @@ BOOST_HANA_NAMESPACE_BEGIN
     //////////////////////////////////////////////////////////////////////////
     template <>
     struct at_impl<tuple_tag> {
-        template <typename Xs, typename N>
-        static constexpr decltype(auto) apply(Xs&& xs, N const&) {
-            constexpr std::size_t index = N::value;
-            return hana::at_c<index>(static_cast<Xs&&>(xs).storage_);
+        static using apply(using auto xs, using auto n) {
+          return static_cast<detail::fwd_cast_t<
+            typename detail::decay<decltype(xs.storage_)>::type::template ebo_t<n()>,
+            decltype((xs.storage_))>>(xs.storage_).get();
         }
     };
 
@@ -275,22 +275,6 @@ BOOST_HANA_NAMESPACE_BEGIN
         static constexpr auto apply(tuple<Xs...> const&)
         { return hana::bool_c<sizeof...(Xs) == 0>; }
     };
-
-    // compile-time optimizations (to reduce the # of function instantiations)
-    template <std::size_t n, typename ...Xs>
-    constexpr decltype(auto) at_c(tuple<Xs...> const& xs) {
-        return hana::at_c<n>(xs.storage_);
-    }
-
-    template <std::size_t n, typename ...Xs>
-    constexpr decltype(auto) at_c(tuple<Xs...>& xs) {
-        return hana::at_c<n>(xs.storage_);
-    }
-
-    template <std::size_t n, typename ...Xs>
-    constexpr decltype(auto) at_c(tuple<Xs...>&& xs) {
-        return hana::at_c<n>(static_cast<tuple<Xs...>&&>(xs).storage_);
-    }
 
     template <>
     struct index_if_impl<tuple_tag> {

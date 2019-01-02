@@ -167,19 +167,19 @@ BOOST_HANA_NAMESPACE_BEGIN
     struct first_impl<pair_tag> {
         template <typename First, typename Second>
         static constexpr decltype(auto) apply(hana::pair<First, Second>& p) {
-            return detail::ebo_get<detail::pix<0>>(
+            return detail::ebo_get<detail::pix<0>>::apply(
                 static_cast<detail::ebo<detail::pix<0>, First>&>(p)
             );
         }
         template <typename First, typename Second>
         static constexpr decltype(auto) apply(hana::pair<First, Second> const& p) {
-            return detail::ebo_get<detail::pix<0>>(
+            return detail::ebo_get<detail::pix<0>>::apply(
                 static_cast<detail::ebo<detail::pix<0>, First> const&>(p)
             );
         }
         template <typename First, typename Second>
         static constexpr decltype(auto) apply(hana::pair<First, Second>&& p) {
-            return detail::ebo_get<detail::pix<0>>(
+            return detail::ebo_get<detail::pix<0>>::apply(
                 static_cast<detail::ebo<detail::pix<0>, First>&&>(p)
             );
         }
@@ -189,19 +189,19 @@ BOOST_HANA_NAMESPACE_BEGIN
     struct second_impl<pair_tag> {
         template <typename First, typename Second>
         static constexpr decltype(auto) apply(hana::pair<First, Second>& p) {
-            return detail::ebo_get<detail::pix<1>>(
+            return detail::ebo_get<detail::pix<1>>::apply(
                 static_cast<detail::ebo<detail::pix<1>, Second>&>(p)
             );
         }
         template <typename First, typename Second>
         static constexpr decltype(auto) apply(hana::pair<First, Second> const& p) {
-            return detail::ebo_get<detail::pix<1>>(
+            return detail::ebo_get<detail::pix<1>>::apply(
                 static_cast<detail::ebo<detail::pix<1>, Second> const&>(p)
             );
         }
         template <typename First, typename Second>
         static constexpr decltype(auto) apply(hana::pair<First, Second>&& p) {
-            return detail::ebo_get<detail::pix<1>>(
+            return detail::ebo_get<detail::pix<1>>::apply(
                 static_cast<detail::ebo<detail::pix<1>, Second>&&>(p)
             );
         }
