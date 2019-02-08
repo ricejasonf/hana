@@ -1,0 +1,12 @@
+{
+  "cppdock": {
+    "name": "boost_hana"
+  },
+  "platforms": {
+    "develop": {
+      "type": "linux_x64",
+      "base_image": "ricejasonf/parmexpr-emscripten",
+      "deps": []
+    }
+  }
+}

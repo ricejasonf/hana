@@ -50,11 +50,7 @@ include(CheckCxxCompilerSupport)
 include(CheckCXXCompilerFlag)
 add_library(hana INTERFACE)
 target_include_directories(hana INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>")
-if (BOOST_HANA_ENABLE_CPP17)
-    target_compile_features(hana INTERFACE cxx_std_17)
-else()
-    target_compile_features(hana INTERFACE cxx_std_14)
-endif()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")
 
 # Export the `hana` library into a HanaConfig.cmake file
 install(TARGETS hana
