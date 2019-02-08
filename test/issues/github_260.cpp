@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/functional/curry.hpp>
-#include <parmexpr/hana/functional/partial.hpp>
-#include <parmexpr/hana/functional/reverse_partial.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/functional/curry.hpp>
+#include <boost/hana/functional/partial.hpp>
+#include <boost/hana/functional/reverse_partial.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <tuple>
 #include <type_traits>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 struct DefaultConstructible {

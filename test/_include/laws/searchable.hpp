@@ -5,43 +5,43 @@
 #ifndef BOOST_HANA_TEST_LAWS_SEARCHABLE_HPP
 #define BOOST_HANA_TEST_LAWS_SEARCHABLE_HPP
 
-#include <parmexpr/hana/all.hpp>
-#include <parmexpr/hana/all_of.hpp>
-#include <parmexpr/hana/any.hpp>
-#include <parmexpr/hana/any_of.hpp>
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/at_key.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concat.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/concept/searchable.hpp>
-#include <parmexpr/hana/concept/sequence.hpp>
-#include <parmexpr/hana/contains.hpp>
-#include <parmexpr/hana/core/is_a.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/find.hpp>
-#include <parmexpr/hana/find_if.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/functional/always.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/functional/compose.hpp>
-#include <parmexpr/hana/functional/partial.hpp>
-#include <parmexpr/hana/is_disjoint.hpp>
-#include <parmexpr/hana/is_subset.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/none.hpp>
-#include <parmexpr/hana/none_of.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/optional.hpp>
-#include <parmexpr/hana/transform.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/all.hpp>
+#include <boost/hana/all_of.hpp>
+#include <boost/hana/any.hpp>
+#include <boost/hana/any_of.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/at_key.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concat.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/concept/searchable.hpp>
+#include <boost/hana/concept/sequence.hpp>
+#include <boost/hana/contains.hpp>
+#include <boost/hana/core/is_a.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/find.hpp>
+#include <boost/hana/find_if.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/functional/always.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/functional/compose.hpp>
+#include <boost/hana/functional/partial.hpp>
+#include <boost/hana/is_disjoint.hpp>
+#include <boost/hana/is_subset.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/none.hpp>
+#include <boost/hana/none_of.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/transform.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <support/numeric.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename S, typename = when<true>>
     struct TestSearchable : TestSearchable<S, laws> {
         using TestSearchable<S, laws>::TestSearchable;
@@ -606,6 +606,6 @@ namespace parmexpr { namespace hana { namespace test {
             }
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_SEARCHABLE_HPP

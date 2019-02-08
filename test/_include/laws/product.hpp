@@ -5,18 +5,18 @@
 #ifndef BOOST_HANA_TEST_LAWS_PRODUCT_HPP
 #define BOOST_HANA_TEST_LAWS_PRODUCT_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/concept/product.hpp>
-#include <parmexpr/hana/core/make.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/first.hpp>
-#include <parmexpr/hana/second.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/concept/product.hpp>
+#include <boost/hana/core/make.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/first.hpp>
+#include <boost/hana/second.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename P, typename = when<true>>
     struct TestProduct : TestProduct<P, laws> {
         using TestProduct<P, laws>::TestProduct;
@@ -41,6 +41,6 @@ namespace parmexpr { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_PRODUCT_HPP

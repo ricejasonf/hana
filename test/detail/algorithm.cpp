@@ -2,11 +2,11 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/detail/algorithm.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/less.hpp>
-#include <parmexpr/hana/mult.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/detail/algorithm.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/less.hpp>
+#include <boost/hana/mult.hpp>
+namespace hana = boost::hana;
 
 
 // The algorithms are taken from the suggested implementations on cppreference.

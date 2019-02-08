@@ -5,19 +5,19 @@
 #ifndef BOOST_HANA_TEST_AUTO_DROP_WHILE_HPP
 #define BOOST_HANA_TEST_AUTO_DROP_WHILE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/drop_while.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/functional/id.hpp>
-#include <parmexpr/hana/not_equal.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/drop_while.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/functional/id.hpp>
+#include <boost/hana/not_equal.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_drop_while{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(

@@ -6,11 +6,11 @@
 #ifndef BOOST_HANA_TEST_AUTO_INDEX_IF_HPP
 #define BOOST_HANA_TEST_AUTO_INDEX_IF_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/index_if.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/optional.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/index_if.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/optional.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -21,7 +21,7 @@ namespace _test_index_if_detail { template <int> struct invalid { }; }
 
 
 TestCase test_index_if{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
     using _test_index_if_detail::invalid;
 

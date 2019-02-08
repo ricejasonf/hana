@@ -2,12 +2,12 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/concept/constant.hpp>
-#include <parmexpr/hana/concept/integral_constant.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/fwd/core/to.hpp>
-#include <parmexpr/hana/value.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/concept/constant.hpp>
+#include <boost/hana/concept/integral_constant.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/fwd/core/to.hpp>
+#include <boost/hana/value.hpp>
+namespace hana = boost::hana;
 
 
 // Define a simple model of IntegralConstant
@@ -18,7 +18,7 @@ struct constant {
     using hana_tag = constant_tag;
 };
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <>
     struct IntegralConstant<constant_tag> {
         static constexpr bool value = true;

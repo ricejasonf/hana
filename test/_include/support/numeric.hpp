@@ -5,21 +5,21 @@
 #ifndef TEST_SUPPORT_NUMERIC_HPP
 #define TEST_SUPPORT_NUMERIC_HPP
 
-#include <parmexpr/hana/core/tag_of.hpp>
-#include <parmexpr/hana/eval.hpp>
-#include <parmexpr/hana/fwd/div.hpp>
-#include <parmexpr/hana/fwd/equal.hpp>
-#include <parmexpr/hana/fwd/eval_if.hpp>
-#include <parmexpr/hana/fwd/less.hpp>
-#include <parmexpr/hana/fwd/minus.hpp>
-#include <parmexpr/hana/fwd/mod.hpp>
-#include <parmexpr/hana/fwd/mult.hpp>
-#include <parmexpr/hana/fwd/negate.hpp>
-#include <parmexpr/hana/fwd/not.hpp>
-#include <parmexpr/hana/fwd/one.hpp>
-#include <parmexpr/hana/fwd/plus.hpp>
-#include <parmexpr/hana/fwd/while.hpp>
-#include <parmexpr/hana/fwd/zero.hpp>
+#include <boost/hana/core/tag_of.hpp>
+#include <boost/hana/eval.hpp>
+#include <boost/hana/fwd/div.hpp>
+#include <boost/hana/fwd/equal.hpp>
+#include <boost/hana/fwd/eval_if.hpp>
+#include <boost/hana/fwd/less.hpp>
+#include <boost/hana/fwd/minus.hpp>
+#include <boost/hana/fwd/mod.hpp>
+#include <boost/hana/fwd/mult.hpp>
+#include <boost/hana/fwd/negate.hpp>
+#include <boost/hana/fwd/not.hpp>
+#include <boost/hana/fwd/one.hpp>
+#include <boost/hana/fwd/plus.hpp>
+#include <boost/hana/fwd/while.hpp>
+#include <boost/hana/fwd/zero.hpp>
 
 
 struct numeric_type {
@@ -28,7 +28,7 @@ struct numeric_type {
     constexpr operator int() const { return value; }
 };
 
-using Numeric = parmexpr::hana::tag_of_t<numeric_type>;
+using Numeric = boost::hana::tag_of_t<numeric_type>;
 
 struct numeric_t {
     constexpr numeric_type operator()(int x) const {
@@ -38,7 +38,7 @@ struct numeric_t {
 constexpr numeric_t numeric{};
 
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     //////////////////////////////////////////////////////////////////////////
     // Comparable
     //////////////////////////////////////////////////////////////////////////
@@ -170,6 +170,6 @@ namespace parmexpr { namespace hana {
         static constexpr auto apply(X x, Y y)
         { return numeric(x.value % y.value); }
     };
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif //! TEST_SUPPORT_NUMERIC_HPP

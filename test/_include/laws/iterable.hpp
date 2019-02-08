@@ -5,40 +5,40 @@
 #ifndef BOOST_HANA_TEST_LAWS_ITERABLE_HPP
 #define BOOST_HANA_TEST_LAWS_ITERABLE_HPP
 
-#include <parmexpr/hana/any_of.hpp>
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/at.hpp>
-#include <parmexpr/hana/back.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/concept/foldable.hpp>
-#include <parmexpr/hana/concept/sequence.hpp>
-#include <parmexpr/hana/core/make.hpp>
-#include <parmexpr/hana/core/to.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/drop_front.hpp>
-#include <parmexpr/hana/drop_front_exactly.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/find_if.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/front.hpp>
-#include <parmexpr/hana/functional/always.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/is_empty.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/length.hpp>
-#include <parmexpr/hana/minus.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/optional.hpp>
-#include <parmexpr/hana/range.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/any_of.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/at.hpp>
+#include <boost/hana/back.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/concept/foldable.hpp>
+#include <boost/hana/concept/sequence.hpp>
+#include <boost/hana/core/make.hpp>
+#include <boost/hana/core/to.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/drop_front.hpp>
+#include <boost/hana/drop_front_exactly.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/find_if.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/front.hpp>
+#include <boost/hana/functional/always.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/is_empty.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/length.hpp>
+#include <boost/hana/minus.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/range.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename It, typename = hana::when<true>>
     struct TestIterable : TestIterable<It, laws> {
         using TestIterable<It, laws>::TestIterable;
@@ -190,6 +190,6 @@ namespace parmexpr { namespace hana { namespace test {
             ));
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_ITERABLE_HPP

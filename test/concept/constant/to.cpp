@@ -4,9 +4,9 @@
 
 #include "minimal.hpp"
 
-#include <parmexpr/hana/concept/constant.hpp>
-#include <parmexpr/hana/core/to.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/concept/constant.hpp>
+#include <boost/hana/core/to.hpp>
+namespace hana = boost::hana;
 
 
 static_assert(hana::is_convertible<minimal_constant_tag<bool>, bool>::value, "");

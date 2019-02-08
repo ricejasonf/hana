@@ -6,7 +6,7 @@ import config : requires ;
 import testing ;
 import regex ;
 
-project parmexpr/hana :
+project boost/hana :
     requirements
         <include>./_include
         <include>../include

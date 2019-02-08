@@ -4,10 +4,10 @@
 
 #include "minimal.hpp"
 
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/orderable.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

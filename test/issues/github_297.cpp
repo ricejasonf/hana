@@ -2,12 +2,12 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/map.hpp>
-#include <parmexpr/hana/pair.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/map.hpp>
+#include <boost/hana/pair.hpp>
 
 #include <memory>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

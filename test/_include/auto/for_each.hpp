@@ -5,8 +5,8 @@
 #ifndef BOOST_HANA_TEST_AUTO_FOR_EACH_HPP
 #define BOOST_HANA_TEST_AUTO_FOR_EACH_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/for_each.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/for_each.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -15,7 +15,7 @@
 
 
 TestCase test_for_each{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     // Make sure the function is applied in left-to-right order.

@@ -4,13 +4,13 @@
 
 #include "minimal.hpp"
 
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/euclidean_ring.hpp>
 #include <laws/group.hpp>
 #include <laws/monoid.hpp>
 #include <laws/ring.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

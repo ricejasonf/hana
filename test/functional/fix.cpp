@@ -2,17 +2,17 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/functional/fix.hpp>
+#include <boost/hana/functional/fix.hpp>
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/config.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/functional/always.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/minus.hpp>
-#include <parmexpr/hana/mult.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/assert.hpp>
+#include <boost/hana/config.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/functional/always.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/minus.hpp>
+#include <boost/hana/mult.hpp>
+namespace hana = boost::hana;
 
 
 BOOST_HANA_CONSTEXPR_LAMBDA auto fact = hana::fix([](auto fact, auto n) {

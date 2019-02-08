@@ -5,9 +5,9 @@
 #ifndef BOOST_HANA_TEST_AUTO_SEQUENCE_HPP
 #define BOOST_HANA_TEST_AUTO_SEQUENCE_HPP
 
-#include <parmexpr/hana/concept/sequence.hpp>
+#include <boost/hana/concept/sequence.hpp>
 
 
-static_assert(parmexpr::hana::Sequence<TUPLE_TAG>::value, "");
+static_assert(boost::hana::Sequence<TUPLE_TAG>::value, "");
 
 #endif // !BOOST_HANA_TEST_AUTO_SEQUENCE_HPP

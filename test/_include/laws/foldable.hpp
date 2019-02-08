@@ -5,43 +5,43 @@
 #ifndef BOOST_HANA_TEST_LAWS_FOLDABLE_HPP
 #define BOOST_HANA_TEST_LAWS_FOLDABLE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/chain.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/concept/foldable.hpp>
-#include <parmexpr/hana/concept/product.hpp>
-#include <parmexpr/hana/concept/sequence.hpp>
-#include <parmexpr/hana/config.hpp>
-#include <parmexpr/hana/core/make.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/count.hpp>
-#include <parmexpr/hana/count_if.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/first.hpp>
-#include <parmexpr/hana/fold.hpp>
-#include <parmexpr/hana/fold_left.hpp>
-#include <parmexpr/hana/fold_right.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/functional/curry.hpp>
-#include <parmexpr/hana/functional/demux.hpp>
-#include <parmexpr/hana/functional/flip.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/length.hpp>
-#include <parmexpr/hana/lift.hpp>
-#include <parmexpr/hana/maximum.hpp>
-#include <parmexpr/hana/minimum.hpp>
-#include <parmexpr/hana/monadic_fold_left.hpp>
-#include <parmexpr/hana/monadic_fold_right.hpp>
-#include <parmexpr/hana/not_equal.hpp>
-#include <parmexpr/hana/product.hpp>
-#include <parmexpr/hana/reverse_fold.hpp>
-#include <parmexpr/hana/second.hpp>
-#include <parmexpr/hana/size.hpp>
-#include <parmexpr/hana/sum.hpp>
-#include <parmexpr/hana/unpack.hpp>
-#include <parmexpr/hana/value.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/chain.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/concept/foldable.hpp>
+#include <boost/hana/concept/product.hpp>
+#include <boost/hana/concept/sequence.hpp>
+#include <boost/hana/config.hpp>
+#include <boost/hana/core/make.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/count.hpp>
+#include <boost/hana/count_if.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/first.hpp>
+#include <boost/hana/fold.hpp>
+#include <boost/hana/fold_left.hpp>
+#include <boost/hana/fold_right.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/functional/curry.hpp>
+#include <boost/hana/functional/demux.hpp>
+#include <boost/hana/functional/flip.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/length.hpp>
+#include <boost/hana/lift.hpp>
+#include <boost/hana/maximum.hpp>
+#include <boost/hana/minimum.hpp>
+#include <boost/hana/monadic_fold_left.hpp>
+#include <boost/hana/monadic_fold_right.hpp>
+#include <boost/hana/not_equal.hpp>
+#include <boost/hana/product.hpp>
+#include <boost/hana/reverse_fold.hpp>
+#include <boost/hana/second.hpp>
+#include <boost/hana/size.hpp>
+#include <boost/hana/sum.hpp>
+#include <boost/hana/unpack.hpp>
+#include <boost/hana/value.hpp>
 
 #include <laws/base.hpp>
 #include <support/identity.hpp>
@@ -49,7 +49,7 @@
 #include <vector>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename F, typename = when<true>>
     struct TestFoldable : TestFoldable<F, laws> {
         using TestFoldable<F, laws>::TestFoldable;
@@ -1099,6 +1099,6 @@ namespace parmexpr { namespace hana { namespace test {
             ));
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_FOLDABLE_HPP

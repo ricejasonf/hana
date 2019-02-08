@@ -5,18 +5,18 @@
 #ifndef BOOST_HANA_TEST_AUTO_DROP_FRONT_HPP
 #define BOOST_HANA_TEST_AUTO_DROP_FRONT_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/drop_front.hpp>
-#include <parmexpr/hana/drop_front_exactly.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/drop_front.hpp>
+#include <boost/hana/drop_front_exactly.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/integral_constant.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_drop_front{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(
@@ -103,7 +103,7 @@ TestCase test_drop_front{[]{
 }};
 
 TestCase test_drop_front_exactly{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(

@@ -2,16 +2,16 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/concept/struct.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/fold_left.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/concept/struct.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/fold_left.hpp>
+#include <boost/hana/integral_constant.hpp>
 
 #include "minimal_struct.hpp"
 #include <laws/base.hpp>
 #include <support/minimal_product.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 using hana::test::ct_eq;
 
 

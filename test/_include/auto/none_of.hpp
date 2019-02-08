@@ -5,18 +5,18 @@
 #ifndef BOOST_HANA_TEST_AUTO_NONE_OF_HPP
 #define BOOST_HANA_TEST_AUTO_NONE_OF_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/none_of.hpp>
-#include <parmexpr/hana/not.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/none_of.hpp>
+#include <boost/hana/not.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_none_of{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::none_of(

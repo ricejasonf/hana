@@ -5,7 +5,7 @@
 #ifndef BOOST_HANA_TEST_EXT_BOOST_TUPLE_AUTO_SPECS_HPP
 #define BOOST_HANA_TEST_EXT_BOOST_TUPLE_AUTO_SPECS_HPP
 
-#include <parmexpr/hana/ext/boost/tuple.hpp>
+#include <boost/hana/ext/boost/tuple.hpp>
 
 #include <boost/tuple/tuple.hpp>
 

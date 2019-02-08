@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/at_key.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/map.hpp>
-#include <parmexpr/hana/pair.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/at_key.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/map.hpp>
+#include <boost/hana/pair.hpp>
 
 #include <utility>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 template <typename T>
@@ -68,7 +68,7 @@ int main() {
     }
 
     // Make sure we return a rvalue-reference from a temporary map
-    // (https://github.com/parmexprorg/hana/issues/90)
+    // (https://github.com/boostorg/hana/issues/90)
     {
         auto xs = hana::make_map(
             hana::make_pair(hana::int_c<0>, 0),

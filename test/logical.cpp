@@ -2,19 +2,19 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/concept/logical.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/functional/always.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/tuple.hpp>
-#include <parmexpr/hana/while.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/concept/logical.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/functional/always.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/while.hpp>
 
 #include <laws/logical.hpp>
 
 #include <vector>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

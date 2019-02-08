@@ -2,36 +2,36 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/adjust_if.hpp>
-#include <parmexpr/hana/all_of.hpp>
-#include <parmexpr/hana/any_of.hpp>
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/count_if.hpp>
-#include <parmexpr/hana/drop_while.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/ext/std/tuple.hpp>
-#include <parmexpr/hana/filter.hpp>
-#include <parmexpr/hana/find_if.hpp>
-#include <parmexpr/hana/functional/id.hpp>
-#include <parmexpr/hana/functional/partial.hpp>
-#include <parmexpr/hana/group.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/lexicographical_compare.hpp>
-#include <parmexpr/hana/maximum.hpp>
-#include <parmexpr/hana/minimum.hpp>
-#include <parmexpr/hana/none_of.hpp>
-#include <parmexpr/hana/optional.hpp>
-#include <parmexpr/hana/partition.hpp>
-#include <parmexpr/hana/plus.hpp>
-#include <parmexpr/hana/remove_if.hpp>
-#include <parmexpr/hana/replace_if.hpp>
-#include <parmexpr/hana/sort.hpp>
-#include <parmexpr/hana/span.hpp>
-#include <parmexpr/hana/take_while.hpp>
-#include <parmexpr/hana/tuple.hpp>
-#include <parmexpr/hana/unique.hpp>
-#include <parmexpr/hana/while.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/adjust_if.hpp>
+#include <boost/hana/all_of.hpp>
+#include <boost/hana/any_of.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/count_if.hpp>
+#include <boost/hana/drop_while.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/ext/std/tuple.hpp>
+#include <boost/hana/filter.hpp>
+#include <boost/hana/find_if.hpp>
+#include <boost/hana/functional/id.hpp>
+#include <boost/hana/functional/partial.hpp>
+#include <boost/hana/group.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/lexicographical_compare.hpp>
+#include <boost/hana/maximum.hpp>
+#include <boost/hana/minimum.hpp>
+#include <boost/hana/none_of.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/partition.hpp>
+#include <boost/hana/plus.hpp>
+#include <boost/hana/remove_if.hpp>
+#include <boost/hana/replace_if.hpp>
+#include <boost/hana/sort.hpp>
+#include <boost/hana/span.hpp>
+#include <boost/hana/take_while.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/unique.hpp>
+#include <boost/hana/while.hpp>
+namespace hana = boost::hana;
 
 
 constexpr auto increment = hana::partial(hana::plus, hana::int_c<1>);

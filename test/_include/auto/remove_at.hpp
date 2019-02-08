@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_AUTO_REMOVE_AT_HPP
 #define BOOST_HANA_TEST_AUTO_REMOVE_AT_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/remove_at.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/remove_at.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_remove_at{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(

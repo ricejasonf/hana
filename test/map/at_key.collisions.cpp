@@ -2,17 +2,17 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/at_key.hpp>
-#include <parmexpr/hana/core/to.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/hash.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/map.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/pair.hpp>
-#include <parmexpr/hana/tuple.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/assert.hpp>
+#include <boost/hana/at_key.hpp>
+#include <boost/hana/core/to.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/hash.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/map.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/pair.hpp>
+#include <boost/hana/tuple.hpp>
+namespace hana = boost::hana;
 
 
 struct A { };
@@ -20,7 +20,7 @@ struct B { };
 
 struct the_hash;
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <>
     struct hash_impl<A> {
         static constexpr auto apply(A const&) {

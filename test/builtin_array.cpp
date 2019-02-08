@@ -2,25 +2,25 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/any_of.hpp>
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/foldable.hpp>
-#include <parmexpr/hana/concept/searchable.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/find_if.hpp>
-#include <parmexpr/hana/functional/always.hpp>
-#include <parmexpr/hana/functional/placeholder.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/optional.hpp>
-#include <parmexpr/hana/unpack.hpp>
+#include <boost/hana/any_of.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/foldable.hpp>
+#include <boost/hana/concept/searchable.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/find_if.hpp>
+#include <boost/hana/functional/always.hpp>
+#include <boost/hana/functional/placeholder.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/unpack.hpp>
 
 #include <laws/base.hpp>
 #include <laws/foldable.hpp>
 #include <laws/searchable.hpp>
 
 #include <cstddef>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 template <typename T, std::size_t n>

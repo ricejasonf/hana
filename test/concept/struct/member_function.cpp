@@ -2,16 +2,16 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/fuse.hpp>
-#include <parmexpr/hana/fwd/accessors.hpp>
-#include <parmexpr/hana/pair.hpp>
-#include <parmexpr/hana/string.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/fuse.hpp>
+#include <boost/hana/fwd/accessors.hpp>
+#include <boost/hana/pair.hpp>
+#include <boost/hana/string.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <string>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 //
@@ -22,7 +22,7 @@ struct Foo {
     std::string get_name() const { return "louis"; }
 };
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <>
     struct accessors_impl<Foo> {
         static auto apply() {

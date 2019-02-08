@@ -2,15 +2,15 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/experimental/printable.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/set.hpp>
-#include <parmexpr/hana/string.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/experimental/printable.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/set.hpp>
+#include <boost/hana/string.hpp>
 
 #include <sstream>
 #include <string>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

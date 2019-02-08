@@ -2,12 +2,12 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/fwd/not.hpp>
-#include <parmexpr/hana/fwd/while.hpp>
-#include <parmexpr/hana/if.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/bool.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/fwd/not.hpp>
+#include <boost/hana/fwd/while.hpp>
+#include <boost/hana/if.hpp>
+namespace hana = boost::hana;
 
 
 // This test makes sure that if_ can be used with non-copyable branches.
@@ -15,7 +15,7 @@ namespace hana = parmexpr::hana;
 template <bool Value>
 struct Boolean { };
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <bool Value>
     struct while_impl<Boolean<Value>> {
         // Not implemented

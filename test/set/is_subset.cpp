@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/is_subset.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/set.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/is_subset.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/set.hpp>
 
 #include <laws/base.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 using hana::test::ct_eq;
 
 

@@ -6,11 +6,11 @@
 #ifndef TEST_SUPPORT_COUNTER_HPP
 #define TEST_SUPPORT_COUNTER_HPP
 
-#include <parmexpr/hana/fwd/at.hpp>
-#include <parmexpr/hana/fwd/concept/iterable.hpp>
-#include <parmexpr/hana/fwd/drop_front.hpp>
-#include <parmexpr/hana/fwd/is_empty.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
+#include <boost/hana/fwd/at.hpp>
+#include <boost/hana/fwd/concept/iterable.hpp>
+#include <boost/hana/fwd/drop_front.hpp>
+#include <boost/hana/fwd/is_empty.hpp>
+#include <boost/hana/integral_constant.hpp>
 
 
 // Counter - an infinite iterable for the masses
@@ -24,7 +24,7 @@ struct Counter {
 };
 
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     //////////////////////////////////////////////////////////////////////////
     // Iterable
     //////////////////////////////////////////////////////////////////////////
@@ -51,6 +51,6 @@ namespace parmexpr { namespace hana {
             -> hana::false_
         { return {}; }
     };
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif // !TEST_SUPPORT_COUNTER_HPP

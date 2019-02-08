@@ -1,12 +1,12 @@
 // Copyright Jason Rice 2016
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
-// modified from https://github.com/parmexprorg/hana/issues/304
+// modified from https://github.com/boostorg/hana/issues/304
 
-#include <parmexpr/hana/ext/std/array.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/ext/std/array.hpp>
+#include <boost/hana/tuple.hpp>
 
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 struct Foo
 {

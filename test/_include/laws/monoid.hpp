@@ -5,18 +5,18 @@
 #ifndef BOOST_HANA_TEST_LAWS_MONOID_HPP
 #define BOOST_HANA_TEST_LAWS_MONOID_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/concept/monoid.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/concept/monoid.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename M, typename = when<true>>
     struct TestMonoid : TestMonoid<M, laws> {
         using TestMonoid<M, laws>::TestMonoid;
@@ -81,6 +81,6 @@ namespace parmexpr { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_MONOID_HPP

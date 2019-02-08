@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_AUTO_TAKE_WHILE_HPP
 #define BOOST_HANA_TEST_AUTO_TAKE_WHILE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/not_equal.hpp>
-#include <parmexpr/hana/take_while.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/not_equal.hpp>
+#include <boost/hana/take_while.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_take_while{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     auto z = ct_eq<999>{};

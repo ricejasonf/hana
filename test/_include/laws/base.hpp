@@ -5,22 +5,22 @@
 #ifndef BOOST_HANA_TEST_LAWS_BASE_HPP
 #define BOOST_HANA_TEST_LAWS_BASE_HPP
 
-#include <parmexpr/hana/and.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/detail/wrong.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/functional/compose.hpp>
-#include <parmexpr/hana/functional/infix.hpp>
-#include <parmexpr/hana/functional/partial.hpp>
-#include <parmexpr/hana/fwd/concept/integral_constant.hpp>
-#include <parmexpr/hana/fwd/core/to.hpp>
-#include <parmexpr/hana/fwd/less.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/or.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/and.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/detail/wrong.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/functional/compose.hpp>
+#include <boost/hana/functional/infix.hpp>
+#include <boost/hana/functional/partial.hpp>
+#include <boost/hana/fwd/concept/integral_constant.hpp>
+#include <boost/hana/fwd/core/to.hpp>
+#include <boost/hana/fwd/less.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/or.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <support/tracked.hpp>
 
@@ -28,7 +28,7 @@
 #include <utility>
 
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     //////////////////////////////////////////////////////////////////////////
     // Misc
     //////////////////////////////////////////////////////////////////////////
@@ -364,6 +364,6 @@ namespace parmexpr { namespace hana {
         static bool apply(X const&, Y const&)
         { return X::value < Y::value; }
     };
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif // !BOOST_HANA_TEST_LAWS_BASE_HPP

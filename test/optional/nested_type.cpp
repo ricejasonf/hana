@@ -2,11 +2,11 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/optional.hpp>
-#include <parmexpr/hana/type.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/type.hpp>
 
 #include <type_traits>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 // This test makes sure that an optional holding a hana::type has a

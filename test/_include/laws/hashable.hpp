@@ -5,21 +5,21 @@
 #ifndef BOOST_HANA_TEST_LAWS_HASHABLE_HPP
 #define BOOST_HANA_TEST_LAWS_HASHABLE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/hashable.hpp>
-#include <parmexpr/hana/core/default.hpp>
-#include <parmexpr/hana/core/tag_of.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/hash.hpp>
-#include <parmexpr/hana/if.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/hashable.hpp>
+#include <boost/hana/core/default.hpp>
+#include <boost/hana/core/tag_of.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/hash.hpp>
+#include <boost/hana/if.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename G, typename = when<true>>
     struct TestHashable : TestHashable<G, laws> {
         using TestHashable<G, laws>::TestHashable;
@@ -55,6 +55,6 @@ namespace parmexpr { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_HASHABLE_HPP

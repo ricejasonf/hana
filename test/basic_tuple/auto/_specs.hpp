@@ -5,11 +5,11 @@
 #ifndef BOOST_HANA_TEST_BASIC_TUPLE_AUTO_SPECS_HPP
 #define BOOST_HANA_TEST_BASIC_TUPLE_AUTO_SPECS_HPP
 
-#include <parmexpr/hana/basic_tuple.hpp>
+#include <boost/hana/basic_tuple.hpp>
 
 
-#define MAKE_TUPLE(...) ::parmexpr::hana::make_basic_tuple(__VA_ARGS__)
-#define TUPLE_TYPE(...) ::parmexpr::hana::basic_tuple<__VA_ARGS__>
-#define TUPLE_TAG ::parmexpr::hana::basic_tuple_tag
+#define MAKE_TUPLE(...) ::boost::hana::make_basic_tuple(__VA_ARGS__)
+#define TUPLE_TYPE(...) ::boost::hana::basic_tuple<__VA_ARGS__>
+#define TUPLE_TAG ::boost::hana::basic_tuple_tag
 
 #endif // !BOOST_HANA_TEST_BASIC_TUPLE_AUTO_SPECS_HPP

@@ -2,11 +2,11 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/any_of.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/any_of.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <string>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 // This used to trigger an ICE on Clang

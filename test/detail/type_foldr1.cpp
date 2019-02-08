@@ -2,10 +2,10 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/detail/type_foldr1.hpp>
+#include <boost/hana/detail/type_foldr1.hpp>
 
 #include <type_traits>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 template <typename x, typename state>

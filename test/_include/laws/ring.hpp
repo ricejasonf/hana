@@ -5,27 +5,27 @@
 #ifndef BOOST_HANA_TEST_LAWS_RING_HPP
 #define BOOST_HANA_TEST_LAWS_RING_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/concept/constant.hpp>
-#include <parmexpr/hana/concept/monoid.hpp>
-#include <parmexpr/hana/concept/ring.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/mult.hpp>
-#include <parmexpr/hana/not_equal.hpp>
-#include <parmexpr/hana/one.hpp>
-#include <parmexpr/hana/plus.hpp>
-#include <parmexpr/hana/power.hpp>
-#include <parmexpr/hana/value.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/concept/constant.hpp>
+#include <boost/hana/concept/monoid.hpp>
+#include <boost/hana/concept/ring.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/mult.hpp>
+#include <boost/hana/not_equal.hpp>
+#include <boost/hana/one.hpp>
+#include <boost/hana/plus.hpp>
+#include <boost/hana/power.hpp>
+#include <boost/hana/value.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename R, typename = when<true>>
     struct TestRing : TestRing<R, laws> {
         using TestRing<R, laws>::TestRing;
@@ -120,6 +120,6 @@ namespace parmexpr { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_RING_HPP

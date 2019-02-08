@@ -2,15 +2,15 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/ext/parmexpr/mpl/list.hpp>
+#include <boost/hana/ext/boost/mpl/list.hpp>
 
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/comparable.hpp>
 
-#include <parmexpr/mpl/list.hpp>
-namespace hana = parmexpr::hana;
-namespace mpl = parmexpr::mpl;
+#include <boost/mpl/list.hpp>
+namespace hana = boost::hana;
+namespace mpl = boost::mpl;
 
 
 struct t1; struct t2; struct t3; struct t4;
@@ -24,5 +24,5 @@ int main() {
         , mpl::list<t1, t2, t3, t4>{}
     );
 
-    hana::test::TestComparable<hana::ext::parmexpr::mpl::list_tag>{lists};
+    hana::test::TestComparable<hana::ext::boost::mpl::list_tag>{lists};
 }

@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/concept/monoid.hpp>
-#include <parmexpr/hana/plus.hpp>
-#include <parmexpr/hana/tuple.hpp>
-#include <parmexpr/hana/zero.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/concept/monoid.hpp>
+#include <boost/hana/plus.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/zero.hpp>
 
 #include <laws/monoid.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

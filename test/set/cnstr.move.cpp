@@ -2,16 +2,16 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/fwd/hash.hpp>
-#include <parmexpr/hana/set.hpp>
-#include <parmexpr/hana/type.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/fwd/hash.hpp>
+#include <boost/hana/set.hpp>
+#include <boost/hana/type.hpp>
 
 #include <support/constexpr_move_only.hpp>
 #include <support/tracked_move_only.hpp>
 
 #include <utility>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 constexpr bool in_constexpr_context() {

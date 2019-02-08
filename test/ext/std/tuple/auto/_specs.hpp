@@ -5,13 +5,13 @@
 #ifndef BOOST_HANA_TEST_EXT_STD_TUPLE_AUTO_SPECS_HPP
 #define BOOST_HANA_TEST_EXT_STD_TUPLE_AUTO_SPECS_HPP
 
-#include <parmexpr/hana/ext/std/tuple.hpp>
+#include <boost/hana/ext/std/tuple.hpp>
 
 #include <tuple>
 
 
 #define MAKE_TUPLE(...) ::std::make_tuple(__VA_ARGS__)
 #define TUPLE_TYPE(...) ::std::tuple<__VA_ARGS__>
-#define TUPLE_TAG ::parmexpr::hana::ext::std::tuple_tag
+#define TUPLE_TAG ::boost::hana::ext::std::tuple_tag
 
 #endif // !BOOST_HANA_TEST_EXT_STD_TUPLE_AUTO_SPECS_HPP

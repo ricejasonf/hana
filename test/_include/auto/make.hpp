@@ -5,16 +5,16 @@
 #ifndef BOOST_HANA_TEST_AUTO_MAKE_HPP
 #define BOOST_HANA_TEST_AUTO_MAKE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/core/make.hpp>
-#include <parmexpr/hana/equal.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/core/make.hpp>
+#include <boost/hana/equal.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_make{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(

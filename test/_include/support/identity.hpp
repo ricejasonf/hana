@@ -5,18 +5,18 @@
 #ifndef TEST_SUPPORT_IDENTITY_HPP
 #define TEST_SUPPORT_IDENTITY_HPP
 
-#include <parmexpr/hana/chain.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/functional/compose.hpp>
-#include <parmexpr/hana/functional/partial.hpp>
-#include <parmexpr/hana/fwd/adjust_if.hpp>
-#include <parmexpr/hana/fwd/ap.hpp>
-#include <parmexpr/hana/fwd/equal.hpp>
-#include <parmexpr/hana/fwd/flatten.hpp>
-#include <parmexpr/hana/fwd/less.hpp>
-#include <parmexpr/hana/fwd/lift.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/transform.hpp>
+#include <boost/hana/chain.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/functional/compose.hpp>
+#include <boost/hana/functional/partial.hpp>
+#include <boost/hana/fwd/adjust_if.hpp>
+#include <boost/hana/fwd/ap.hpp>
+#include <boost/hana/fwd/equal.hpp>
+#include <boost/hana/fwd/flatten.hpp>
+#include <boost/hana/fwd/less.hpp>
+#include <boost/hana/fwd/lift.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/transform.hpp>
 
 #include <type_traits>
 
@@ -39,7 +39,7 @@ struct make_identity {
 constexpr make_identity identity{};
 
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     //////////////////////////////////////////////////////////////////////////
     // Comparable
     //////////////////////////////////////////////////////////////////////////
@@ -154,6 +154,6 @@ namespace parmexpr { namespace hana {
         { return f(x.value); }
     };
 #endif
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif // !TEST_SUPPORT_IDENTITY_HPP

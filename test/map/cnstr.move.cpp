@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/fwd/hash.hpp>
-#include <parmexpr/hana/map.hpp>
-#include <parmexpr/hana/pair.hpp>
-#include <parmexpr/hana/type.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/fwd/hash.hpp>
+#include <boost/hana/map.hpp>
+#include <boost/hana/pair.hpp>
+#include <boost/hana/type.hpp>
 
 #include <support/constexpr_move_only.hpp>
 #include <support/tracked_move_only.hpp>
@@ -16,7 +16,7 @@
 #include <string>
 #include <type_traits>
 #include <utility>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 constexpr bool in_constexpr_context() {
@@ -53,7 +53,7 @@ struct NoMove_nonempty {
     friend auto operator!=(NoMove_nonempty const&, NoMove_nonempty const&) { return hana::false_c; }
 };
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <>
     struct hash_impl<NoMove> {
         static constexpr auto apply(NoMove const&)

@@ -5,16 +5,16 @@
 #ifndef BOOST_HANA_TEST_AUTO_REVERSE_HPP
 #define BOOST_HANA_TEST_AUTO_REVERSE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/reverse.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/reverse.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_reverse{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
     using hana::test::cx_eq;
 

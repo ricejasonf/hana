@@ -5,9 +5,9 @@
 #ifndef BOOST_HANA_TEST_AUTO_IS_EMPTY_HPP
 #define BOOST_HANA_TEST_AUTO_IS_EMPTY_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/is_empty.hpp>
-#include <parmexpr/hana/not.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/is_empty.hpp>
+#include <boost/hana/not.hpp>
 
 #include "test_case.hpp"
 
@@ -15,7 +15,7 @@
 namespace _test_is_empty_detail { template <int i> struct undefined { }; }
 
 TestCase test_is_empty{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using _test_is_empty_detail::undefined;
 
     BOOST_HANA_CONSTANT_CHECK(hana::is_empty(

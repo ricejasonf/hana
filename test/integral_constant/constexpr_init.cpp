@@ -2,25 +2,25 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/bool.hpp>
+#include <boost/hana/integral_constant.hpp>
+namespace hana = boost::hana;
 
 
 /*
 When we use `int_<...>` in a template, Clang 3.5 says:
 
 --------------------------------
-include/parmexpr/hana/integral_constant.hpp:80:20: error: constexpr variable 'int_<1>' must be initialized by a constant expression
+include/boost/hana/integral_constant.hpp:80:20: error: constexpr variable 'int_<1>' must be initialized by a constant expression
     constexpr auto int_ = integral<int, i>;
                    ^      ~~~~~~~~~~~~~~~~
-test/integral/constexpr_bug.cpp:41:37: note: in instantiation of variable template specialization 'parmexpr::hana::int_' requested here
+test/integral/constexpr_bug.cpp:41:37: note: in instantiation of variable template specialization 'boost::hana::int_' requested here
 constexpr auto check_int() { return int_<1>; }
                                     ^
-include/parmexpr/hana/integral_constant.hpp:80:27: note: subexpression not valid in a constant expression
+include/boost/hana/integral_constant.hpp:80:27: note: subexpression not valid in a constant expression
     constexpr auto int_ = integral<int, i>;
                           ^
-include/parmexpr/hana/integral_constant.hpp:80:27: note: in call to 'integral_type(integral)'
+include/boost/hana/integral_constant.hpp:80:27: note: in call to 'integral_type(integral)'
 --------------------------------
 
 if we define int_ & friends like

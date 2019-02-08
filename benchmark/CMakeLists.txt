@@ -1,6 +1,6 @@
 # Copyright Louis Dionne 2013-2017
 # Distributed under the Boost Software License, Version 1.0.
-# (See accompanying file LICENSE.md or copy at http://parmexpr.org/LICENSE_1_0.txt)
+# (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
 ##############################################################################
 # Required packages, gems and caveats
@@ -49,7 +49,7 @@ add_custom_target(travis_config_slug USES_TERMINAL
 
 file(GLOB_RECURSE BOOST_HANA_BENCHMARKS *.erb.json)
 foreach(benchmark IN LISTS BOOST_HANA_BENCHMARKS)
-    parmexpr_hana_target_name_for(target ${benchmark} ".erb.json")
+    boost_hana_target_name_for(target ${benchmark} ".erb.json")
     get_filename_component(directory "${benchmark}" DIRECTORY)
     file(GLOB cpp_files "${directory}/*.erb.cpp")
     configure_file("${benchmark}" "${CMAKE_CURRENT_BINARY_DIR}/${target}.erb.json" @ONLY)
@@ -64,9 +64,9 @@ foreach(benchmark IN LISTS BOOST_HANA_BENCHMARKS)
         target_include_directories(${target}.measure PRIVATE "${Meta_INCLUDE_DIR}")
     endif()
     if (Boost_FOUND)
-        target_link_libraries(${target}.measure PRIVATE Boost::parmexpr)
+        target_link_libraries(${target}.measure PRIVATE Boost::boost)
     endif()
-    parmexpr_hana_set_test_properties(${target}.measure)
+    boost_hana_set_test_properties(${target}.measure)
     if (BOOST_HANA_HAS_FTEMPLATE_DEPTH)
         target_compile_options(${target}.measure PRIVATE -ftemplate-depth=-1)
     endif()

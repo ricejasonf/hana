@@ -2,15 +2,15 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/at.hpp>
-#include <parmexpr/hana/at_key.hpp>
-#include <parmexpr/hana/back.hpp>
-#include <parmexpr/hana/front.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/at.hpp>
+#include <boost/hana/at_key.hpp>
+#include <boost/hana/back.hpp>
+#include <boost/hana/front.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <utility>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 template <typename T>

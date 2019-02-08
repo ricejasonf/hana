@@ -5,19 +5,19 @@
 #ifndef BOOST_HANA_TEST_LAWS_SEQUENCE_HPP
 #define BOOST_HANA_TEST_LAWS_SEQUENCE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/concept/sequence.hpp>
-#include <parmexpr/hana/config.hpp>
-#include <parmexpr/hana/core/tag_of.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/functional/compose.hpp>
-#include <parmexpr/hana/functional/id.hpp>
-#include <parmexpr/hana/functional/partial.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/optional.hpp>
-#include <parmexpr/hana/plus.hpp>
-#include <parmexpr/hana/range.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/concept/sequence.hpp>
+#include <boost/hana/config.hpp>
+#include <boost/hana/core/tag_of.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/functional/compose.hpp>
+#include <boost/hana/functional/id.hpp>
+#include <boost/hana/functional/partial.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/optional.hpp>
+#include <boost/hana/plus.hpp>
+#include <boost/hana/range.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <support/minimal_product.hpp>
@@ -27,7 +27,7 @@
 #include <vector>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename S, typename = when<true>>
     struct TestSequence : TestSequence<S, laws> {
         using TestSequence<S, laws>::TestSequence;
@@ -128,6 +128,6 @@ namespace parmexpr { namespace hana { namespace test {
             ));
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_SEQUENCE_HPP

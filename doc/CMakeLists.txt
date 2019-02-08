@@ -1,6 +1,6 @@
 # Copyright Louis Dionne 2013-2017
 # Distributed under the Boost Software License, Version 1.0.
-# (See accompanying file LICENSE.md or copy at http://parmexpr.org/LICENSE_1_0.txt)
+# (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
 find_package(Doxygen)
 if (NOT DOXYGEN_FOUND)
@@ -29,8 +29,8 @@ configure_file(Doxyfile.in docset.doxygen @ONLY)
 add_custom_target(docset
     COMMAND ${DOXYGEN_EXECUTABLE} docset.doxygen
     COMMAND ${CMAKE_COMMAND} -E chdir _docset make
-    COMMAND ${CMAKE_COMMAND} -E remove_directory parmexpr.hana.docset
-    COMMAND ${CMAKE_COMMAND} -E copy_directory _docset/parmexpr.hana.docset parmexpr.hana.docset
+    COMMAND ${CMAKE_COMMAND} -E remove_directory boost.hana.docset
+    COMMAND ${CMAKE_COMMAND} -E copy_directory _docset/boost.hana.docset boost.hana.docset
     COMMAND ${CMAKE_COMMAND} -E remove_directory _docset
     COMMENT "Generating documentation Docset"
     VERBATIM

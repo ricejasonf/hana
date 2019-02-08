@@ -2,14 +2,14 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/concept/group.hpp>
-#include <parmexpr/hana/minus.hpp>
-#include <parmexpr/hana/negate.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/concept/group.hpp>
+#include <boost/hana/minus.hpp>
+#include <boost/hana/negate.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/group.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

@@ -5,7 +5,7 @@
 #ifndef TEST_SUPPORT_EQUIVALENCE_CLASS_HPP
 #define TEST_SUPPORT_EQUIVALENCE_CLASS_HPP
 
-#include <parmexpr/hana/fwd/equal.hpp>
+#include <boost/hana/fwd/equal.hpp>
 
 
 struct EquivalenceClass { };
@@ -22,13 +22,13 @@ constexpr equivalence_class_impl<Token, X> equivalence_class(Token token, X x) {
     return {token, x};
 }
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <>
     struct equal_impl<EquivalenceClass, EquivalenceClass> {
         template <typename X, typename Y>
         static constexpr auto apply(X x, Y y)
         { return hana::equal(x.equivalence_class, y.equivalence_class); }
     };
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif // !TEST_SUPPORT_EQUIVALENCE_CLASS_HPP

@@ -5,7 +5,7 @@
 #ifndef BOOST_HANA_TEST_EXT_BOOST_FUSION_LIST_AUTO_SPECS_HPP
 #define BOOST_HANA_TEST_EXT_BOOST_FUSION_LIST_AUTO_SPECS_HPP
 
-#include <parmexpr/hana/ext/boost/fusion/list.hpp>
+#include <boost/hana/ext/boost/fusion/list.hpp>
 
 #include <boost/fusion/container/generation/make_list.hpp>
 #include <boost/fusion/container/list.hpp>

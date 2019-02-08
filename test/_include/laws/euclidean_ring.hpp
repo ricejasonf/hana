@@ -5,27 +5,27 @@
 #ifndef BOOST_HANA_TEST_LAWS_EUCLIDEAN_RING_HPP
 #define BOOST_HANA_TEST_LAWS_EUCLIDEAN_RING_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/concept/constant.hpp>
-#include <parmexpr/hana/concept/euclidean_ring.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/div.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/mod.hpp>
-#include <parmexpr/hana/mult.hpp>
-#include <parmexpr/hana/not_equal.hpp>
-#include <parmexpr/hana/plus.hpp>
-#include <parmexpr/hana/value.hpp>
-#include <parmexpr/hana/zero.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/concept/constant.hpp>
+#include <boost/hana/concept/euclidean_ring.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/div.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/mod.hpp>
+#include <boost/hana/mult.hpp>
+#include <boost/hana/not_equal.hpp>
+#include <boost/hana/plus.hpp>
+#include <boost/hana/value.hpp>
+#include <boost/hana/zero.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename D, typename = when<true>>
     struct TestEuclideanRing : TestEuclideanRing<D, laws> {
         using TestEuclideanRing<D, laws>::TestEuclideanRing;
@@ -94,6 +94,6 @@ namespace parmexpr { namespace hana { namespace test {
             });
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_EUCLIDEAN_RING_HPP

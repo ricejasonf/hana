@@ -5,15 +5,15 @@
 #ifndef TEST_SUPPORT_SEQ_HPP
 #define TEST_SUPPORT_SEQ_HPP
 
-#include <parmexpr/hana/fwd/at.hpp>
-#include <parmexpr/hana/fwd/concept/sequence.hpp>
-#include <parmexpr/hana/fwd/core/make.hpp>
-#include <parmexpr/hana/fwd/drop_front.hpp>
-#include <parmexpr/hana/fwd/fold_left.hpp>
-#include <parmexpr/hana/fwd/is_empty.hpp>
-#include <parmexpr/hana/fwd/length.hpp>
-#include <parmexpr/hana/tuple.hpp>
-#include <parmexpr/hana/unpack.hpp>
+#include <boost/hana/fwd/at.hpp>
+#include <boost/hana/fwd/concept/sequence.hpp>
+#include <boost/hana/fwd/core/make.hpp>
+#include <boost/hana/fwd/drop_front.hpp>
+#include <boost/hana/fwd/fold_left.hpp>
+#include <boost/hana/fwd/is_empty.hpp>
+#include <boost/hana/fwd/length.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/unpack.hpp>
 
 
 struct Seq;
@@ -28,13 +28,13 @@ struct seq_type {
 struct seq_t {
     template <typename ...Xs>
     constexpr auto operator()(Xs&& ...xs) const {
-        auto storage = parmexpr::hana::make_tuple(xs...);
+        auto storage = boost::hana::make_tuple(xs...);
         return seq_type<decltype(storage)>(storage);
     }
 };
 constexpr seq_t seq{};
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     //////////////////////////////////////////////////////////////////////////
     // Foldable
     //
@@ -117,6 +117,6 @@ namespace parmexpr { namespace hana {
             return ::seq(static_cast<Xs&&>(xs)...);
         }
     };
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif // !TEST_SUPPORT_SEQ_HPP

@@ -5,9 +5,9 @@
 #ifndef BOOST_HANA_TEST_AUTO_SPAN_HPP
 #define BOOST_HANA_TEST_AUTO_SPAN_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/span.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/span.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
@@ -15,7 +15,7 @@
 
 
 TestCase test_span{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     auto z = ct_eq<999>{};

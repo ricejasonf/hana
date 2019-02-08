@@ -2,13 +2,13 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/detail/variadic/foldl1.hpp>
+#include <boost/hana/detail/variadic/foldl1.hpp>
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
 
 #include <laws/base.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 struct undefined { };

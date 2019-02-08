@@ -2,11 +2,11 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/is_empty.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/tuple.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/assert.hpp>
+#include <boost/hana/is_empty.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/tuple.hpp>
+namespace hana = boost::hana;
 
 
 struct x0;

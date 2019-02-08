@@ -2,22 +2,22 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/ext/parmexpr/mpl/vector.hpp>
+#include <boost/hana/ext/boost/mpl/vector.hpp>
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/drop_front_exactly.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/front.hpp>
-#include <parmexpr/hana/is_empty.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/tuple.hpp>
-#include <parmexpr/hana/type.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/drop_front_exactly.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/front.hpp>
+#include <boost/hana/is_empty.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/type.hpp>
 
 #include <laws/iterable.hpp>
 
-#include <parmexpr/mpl/vector.hpp>
-namespace hana = parmexpr::hana;
-namespace mpl = parmexpr::mpl;
+#include <boost/mpl/vector.hpp>
+namespace hana = boost::hana;
+namespace mpl = boost::mpl;
 
 
 struct t1; struct t2; struct t3; struct t4;
@@ -91,5 +91,5 @@ int main() {
         , mpl::vector<t1, t2, t3>{}
         , mpl::vector<t1, t2, t3, t4>{}
     );
-    hana::test::TestIterable<hana::ext::parmexpr::mpl::vector_tag>{vectors};
+    hana::test::TestIterable<hana::ext::boost::mpl::vector_tag>{vectors};
 }

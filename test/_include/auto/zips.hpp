@@ -5,19 +5,19 @@
 #ifndef BOOST_HANA_TEST_AUTO_ZIPS_HPP
 #define BOOST_HANA_TEST_AUTO_ZIPS_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/zip.hpp>
-#include <parmexpr/hana/zip_shortest.hpp>
-#include <parmexpr/hana/zip_shortest_with.hpp>
-#include <parmexpr/hana/zip_with.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/zip.hpp>
+#include <boost/hana/zip_shortest.hpp>
+#include <boost/hana/zip_shortest_with.hpp>
+#include <boost/hana/zip_with.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_zip_shortest_with{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     hana::test::_injection<0> f{};
@@ -150,7 +150,7 @@ TestCase test_zip_shortest_with{[]{
 }};
 
 TestCase test_zip_with{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     hana::test::_injection<0> f{};
@@ -252,7 +252,7 @@ TestCase test_zip_with{[]{
 }};
 
 TestCase test_zip{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(
@@ -295,7 +295,7 @@ TestCase test_zip{[]{
 }};
 
 TestCase test_zip_shortest{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     BOOST_HANA_CONSTANT_CHECK(hana::equal(

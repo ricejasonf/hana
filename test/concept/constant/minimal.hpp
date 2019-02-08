@@ -5,10 +5,10 @@
 #ifndef TEST_CONCEPT_CONSTANT_MINIMAL_HPP
 #define TEST_CONCEPT_CONSTANT_MINIMAL_HPP
 
-#include <parmexpr/hana/concept/constant.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/fwd/core/to.hpp>
-#include <parmexpr/hana/value.hpp>
+#include <boost/hana/concept/constant.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/fwd/core/to.hpp>
+#include <boost/hana/value.hpp>
 
 
 template <typename T>
@@ -22,7 +22,7 @@ struct minimal_constant {
     static constexpr T value_ = v;
 };
 
-namespace parmexpr { namespace hana {
+namespace boost { namespace hana {
     template <typename T>
     struct value_impl<minimal_constant_tag<T>> {
         template <typename N>
@@ -40,6 +40,6 @@ namespace parmexpr { namespace hana {
         static constexpr auto apply(N const&)
         { return minimal_constant<T, hana::value<N>()>{}; }
     };
-}} // end namespace parmexpr::hana
+}} // end namespace boost::hana
 
 #endif // !TEST_CONCEPT_CONSTANT_MINIMAL_HPP

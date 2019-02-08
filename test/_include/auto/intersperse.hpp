@@ -5,16 +5,16 @@
 #ifndef BOOST_HANA_TEST_AUTO_INTERSPERSE_HPP
 #define BOOST_HANA_TEST_AUTO_INTERSPERSE_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/intersperse.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/intersperse.hpp>
 
 #include "test_case.hpp"
 #include <laws/base.hpp>
 
 
 TestCase test_intersperse{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     struct undefined { };

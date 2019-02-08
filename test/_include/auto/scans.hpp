@@ -5,17 +5,17 @@
 #ifndef BOOST_HANA_TEST_AUTO_SCANS_HPP
 #define BOOST_HANA_TEST_AUTO_SCANS_HPP
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/scan_left.hpp>
-#include <parmexpr/hana/scan_right.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/scan_left.hpp>
+#include <boost/hana/scan_right.hpp>
 
 #include <laws/base.hpp>
 #include "test_case.hpp"
 
 
 TestCase test_scan_left{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     struct undefined { };
@@ -110,7 +110,7 @@ TestCase test_scan_left{[]{
 
 
 TestCase test_scan_right{[]{
-    namespace hana = parmexpr::hana;
+    namespace hana = boost::hana;
     using hana::test::ct_eq;
 
     struct undefined { };

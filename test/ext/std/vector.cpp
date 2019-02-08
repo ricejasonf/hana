@@ -2,10 +2,10 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/ext/std/vector.hpp>
+#include <boost/hana/ext/std/vector.hpp>
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/tuple.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/tuple.hpp>
 
 #include <laws/base.hpp>
 #include <laws/comparable.hpp>
@@ -13,7 +13,7 @@
 #include <laws/orderable.hpp>
 
 #include <vector>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

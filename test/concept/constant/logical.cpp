@@ -4,19 +4,19 @@
 
 #include "minimal.hpp"
 
-#include <parmexpr/hana/and.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/if.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/not_equal.hpp>
-#include <parmexpr/hana/or.hpp>
-#include <parmexpr/hana/tuple.hpp>
-#include <parmexpr/hana/while.hpp>
+#include <boost/hana/and.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/if.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/not_equal.hpp>
+#include <boost/hana/or.hpp>
+#include <boost/hana/tuple.hpp>
+#include <boost/hana/while.hpp>
 
 #include <laws/base.hpp>
 #include <laws/logical.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 struct invalid { };

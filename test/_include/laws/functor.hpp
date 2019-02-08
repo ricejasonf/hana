@@ -5,31 +5,31 @@
 #ifndef BOOST_HANA_TEST_LAWS_FUNCTOR_HPP
 #define BOOST_HANA_TEST_LAWS_FUNCTOR_HPP
 
-#include <parmexpr/hana/adjust.hpp>
-#include <parmexpr/hana/adjust_if.hpp>
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/concept/functor.hpp>
-#include <parmexpr/hana/concept/sequence.hpp>
-#include <parmexpr/hana/core/make.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/eval_if.hpp>
-#include <parmexpr/hana/fill.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/functional/always.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/functional/compose.hpp>
-#include <parmexpr/hana/lazy.hpp>
-#include <parmexpr/hana/replace.hpp>
-#include <parmexpr/hana/replace_if.hpp>
-#include <parmexpr/hana/transform.hpp>
+#include <boost/hana/adjust.hpp>
+#include <boost/hana/adjust_if.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/concept/functor.hpp>
+#include <boost/hana/concept/sequence.hpp>
+#include <boost/hana/core/make.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/eval_if.hpp>
+#include <boost/hana/fill.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/functional/always.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/functional/compose.hpp>
+#include <boost/hana/lazy.hpp>
+#include <boost/hana/replace.hpp>
+#include <boost/hana/replace_if.hpp>
+#include <boost/hana/transform.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename F, typename = when<true>>
     struct TestFunctor : TestFunctor<F, laws> {
         using TestFunctor<F, laws>::TestFunctor;
@@ -245,6 +245,6 @@ namespace parmexpr { namespace hana { namespace test {
             }
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_FUNCTOR_HPP

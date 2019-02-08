@@ -5,29 +5,29 @@
 #ifndef BOOST_HANA_TEST_LAWS_APPLICATIVE_HPP
 #define BOOST_HANA_TEST_LAWS_APPLICATIVE_HPP
 
-#include <parmexpr/hana/ap.hpp>
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/concept/applicative.hpp>
-#include <parmexpr/hana/concept/comparable.hpp>
-#include <parmexpr/hana/core/make.hpp>
-#include <parmexpr/hana/core/when.hpp>
-#include <parmexpr/hana/equal.hpp>
-#include <parmexpr/hana/for_each.hpp>
-#include <parmexpr/hana/functional/capture.hpp>
-#include <parmexpr/hana/functional/compose.hpp>
-#include <parmexpr/hana/functional/curry.hpp>
-#include <parmexpr/hana/functional/id.hpp>
-#include <parmexpr/hana/functional/placeholder.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-#include <parmexpr/hana/lift.hpp>
-#include <parmexpr/hana/take_front.hpp>
-#include <parmexpr/hana/transform.hpp>
+#include <boost/hana/ap.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/bool.hpp>
+#include <boost/hana/concept/applicative.hpp>
+#include <boost/hana/concept/comparable.hpp>
+#include <boost/hana/core/make.hpp>
+#include <boost/hana/core/when.hpp>
+#include <boost/hana/equal.hpp>
+#include <boost/hana/for_each.hpp>
+#include <boost/hana/functional/capture.hpp>
+#include <boost/hana/functional/compose.hpp>
+#include <boost/hana/functional/curry.hpp>
+#include <boost/hana/functional/id.hpp>
+#include <boost/hana/functional/placeholder.hpp>
+#include <boost/hana/integral_constant.hpp>
+#include <boost/hana/lift.hpp>
+#include <boost/hana/take_front.hpp>
+#include <boost/hana/transform.hpp>
 
 #include <laws/base.hpp>
 
 
-namespace parmexpr { namespace hana { namespace test {
+namespace boost { namespace hana { namespace test {
     template <typename F, typename = when<true>>
     struct TestApplicative : TestApplicative<F, laws> {
         using TestApplicative<F, laws>::TestApplicative;
@@ -191,6 +191,6 @@ namespace parmexpr { namespace hana { namespace test {
             ));
         }
     };
-}}} // end namespace parmexpr::hana::test
+}}} // end namespace boost::hana::test
 
 #endif // !BOOST_HANA_TEST_LAWS_APPLICATIVE_HPP

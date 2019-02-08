@@ -2,10 +2,10 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/bool.hpp>
-#include <parmexpr/hana/core/to.hpp>
-#include <parmexpr/hana/integral_constant.hpp>
-namespace hana = parmexpr::hana;
+#include <boost/hana/bool.hpp>
+#include <boost/hana/core/to.hpp>
+#include <boost/hana/integral_constant.hpp>
+namespace hana = boost::hana;
 
 
 static_assert(hana::is_convertible<hana::bool_<true>, bool>::value, "");

@@ -2,15 +2,15 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/ext/std/array.hpp>
+#include <boost/hana/ext/std/array.hpp>
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/at.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/at.hpp>
 
 #include <laws/base.hpp> // for move_only
 
 #include <array>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 
 
 int main() {

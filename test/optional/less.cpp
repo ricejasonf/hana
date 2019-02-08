@@ -2,16 +2,16 @@
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE.md or copy at http://boost.org/LICENSE_1_0.txt)
 
-#include <parmexpr/hana/assert.hpp>
-#include <parmexpr/hana/greater.hpp>
-#include <parmexpr/hana/greater_equal.hpp>
-#include <parmexpr/hana/less.hpp>
-#include <parmexpr/hana/less_equal.hpp>
-#include <parmexpr/hana/not.hpp>
-#include <parmexpr/hana/optional.hpp>
+#include <boost/hana/assert.hpp>
+#include <boost/hana/greater.hpp>
+#include <boost/hana/greater_equal.hpp>
+#include <boost/hana/less.hpp>
+#include <boost/hana/less_equal.hpp>
+#include <boost/hana/not.hpp>
+#include <boost/hana/optional.hpp>
 
 #include <laws/base.hpp>
-namespace hana = parmexpr::hana;
+namespace hana = boost::hana;
 using hana::test::ct_ord;
 
 
