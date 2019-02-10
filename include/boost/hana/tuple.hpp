@@ -248,7 +248,8 @@ BOOST_HANA_NAMESPACE_BEGIN
     struct at_impl<tuple_tag> {
         static using apply(using auto xs, using auto n) {
           return static_cast<detail::fwd_cast_t<
-            typename detail::decay<decltype(xs.storage_)>::type::template ebo_t<n()>,
+            typename detail::decay<decltype(xs.storage_)>::type::template
+              ebo_t<detail::decay<decltype(n)>::type::value>,
             decltype((xs.storage_))>>(xs.storage_).get();
         }
     };
